@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            《计算机网络-自顶向下方法》第三章 传输层 | 
+        
+        星辰大海
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#330066">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #6600cc;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #330066 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #330066 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #330066 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #6600cc;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="星辰大海">
+    <meta name="msapplication-starturl" content="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/">
+    <meta name="msapplication-navbutton-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="星辰大海">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="《计算机网络-自顶向下方法》第三章 传输层 | 星辰大海">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Sun Jun 17 2018 20:38:03 GMT+0800">
+        <meta property="article:modified_time" content="Sun Aug 19 2018 21:05:54 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html",
+    "headline": "《计算机网络-自顶向下方法》第三章 传输层",
+    "datePublished": "Sun Jun 17 2018 20:38:03 GMT+0800",
+    "dateModified": "Sun Aug 19 2018 21:05:54 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Mars687",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Welcome to my world!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "星辰大海",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运输层"><span class="post-toc-number">1.</span> <span class="post-toc-text">运输层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#概述和运输层服务"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">概述和运输层服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运输层和网络层的关系"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">运输层和网络层的关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#因特网运输层概述"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">因特网运输层概述</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多路复用与多路分解"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">多路复用与多路分解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无连接的多路复用与多路分解"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">无连接的多路复用与多路分解</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向连接的多路复用与多路分解"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">面向连接的多路复用与多路分解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无连接运输：UDP"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">无连接运输：UDP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UDP-报文结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">UDP 报文结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UDP-检验和"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">UDP 检验和</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可靠数据传输原理"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">可靠数据传输原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#面向连接的运输：TCP"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">面向连接的运输：TCP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TCP-连接"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">TCP 连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP连接特点"><span class="post-toc-number">1.5.1.1.</span> <span class="post-toc-text">TCP连接特点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP连接与套接字"><span class="post-toc-number">1.5.1.2.</span> <span class="post-toc-text">TCP连接与套接字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP三次握手"><span class="post-toc-number">1.5.1.3.</span> <span class="post-toc-text">TCP三次握手</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP四次挥手"><span class="post-toc-number">1.5.1.4.</span> <span class="post-toc-text">TCP四次挥手</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP连接概括"><span class="post-toc-number">1.5.1.5.</span> <span class="post-toc-text">TCP连接概括</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TCP-报文段结构"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">TCP 报文段结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#往返时间的估计与超时"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">往返时间的估计与超时</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可靠数据传输"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">可靠数据传输</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流量控制"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">流量控制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#拥塞控制"><span class="post-toc-number">1.5.6.</span> <span class="post-toc-text">拥塞控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拥塞原因与代价"><span class="post-toc-number">1.5.6.1.</span> <span class="post-toc-text">拥塞原因与代价</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拥塞控制方法"><span class="post-toc-number">1.5.6.2.</span> <span class="post-toc-text">拥塞控制方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TCP拥塞控制"><span class="post-toc-number">1.5.7.</span> <span class="post-toc-text">TCP拥塞控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#TCP拥塞控制算法"><span class="post-toc-number">1.5.7.1.</span> <span class="post-toc-text">TCP拥塞控制算法</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 36 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                《计算机网络-自顶向下方法》第三章 传输层
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mars687</strong>
+        <span>6月 17, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《计算机网络-自顶向下方法》第三章 传输层&url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html&pic=http://blog.venus10.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《计算机网络-自顶向下方法》第三章 传输层&url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html&via=Mars687" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h2><h3 id="概述和运输层服务"><a href="#概述和运输层服务" class="headerlink" title="概述和运输层服务"></a>概述和运输层服务</h3><h4 id="运输层和网络层的关系"><a href="#运输层和网络层的关系" class="headerlink" title="运输层和网络层的关系"></a>运输层和网络层的关系</h4><p>网络层提供了主机之间的逻辑通信。而运输层为运行在不同主机上的进程提供逻辑通信。</p>
+<div align="center"><br><img src="http://i65.tinypic.com/312cns6.jpg" alt="chapter3-TransportLayer"><br></div><br><div align="center">运输层在应用程序进程间提供逻辑的而非物理的通信</div>
+
+<p>运输层协议只工作在端系统上，能提供的服务受制于底层网络协议的服务模型。<br>网络层协议，即 IP 协议，其服务模型是尽力而为交付服务，但不做任何的保证，是不可靠服务 。</p>
+<p>参照书上以东西海岸两个家庭互相写信的经典例子：</p>
+<ul>
+<li>进程 = 堂兄弟姐妹</li>
+<li>主机 = 家庭</li>
+<li>运输层协议 = Ann 和 Bill（孩子里收信发信的大哥大姐），分发到兄弟姐妹中，将信从一个人（进程）送到另一个人</li>
+<li>网络层协议 = 邮政服务，将信从一个家庭（主机）传给另一个家庭</li>
+<li>运输层协议只工作在主机（端系统）中 = Ann 和 Bill 只在家工作，将信拿到门口的邮箱</li>
+<li>多种运输层协议，多种服务模型 = Ann 和 Bill 外出，Susan 和 Harvey来收信发信，结果年龄太小，收发邮件次数少，也老丢信</li>
+<li>运输层服务受制于网络层服务 = 邮政大哥若三天来一次，Ann和Bill就不可能两天收发一次信</li>
+<li>运输层协议能为应用程序提供可靠数据传输服务 = 若邮政大哥把信弄脏弄丢弄混，Ann 和 Bill 可以清理整理信件，或者让对方下次重新发一次</li>
+<li>运输层协议能确保应用程序报文不受入侵读取 = 尽管邮政大哥可能被别人骗或者强行看了信件，Ann 和 Bill 也能规定加密方式对信的内容进行加解密，弟弟妹妹们只需要看信的内容</li>
+<li>多路分解 = Bill 和 Ann从邮递大哥拿到信件，看收信人名字（端口号），然后分别交到他们手上</li>
+<li>多路复用 = Bill 和 Ann从弟弟妹妹手里拿到信件，帮他们装填信封写上信息</li>
+</ul>
+<h4 id="因特网运输层概述"><a href="#因特网运输层概述" class="headerlink" title="因特网运输层概述"></a>因特网运输层概述</h4><p>UDP 提供了一种不可靠、无连接的服务。<br>TCP 提供了一种可靠的、面向连接的服务。<br>进程到进程的数据交付和差错检测是两种最低限度的运输层服务，也是 UDP 能提供的仅有的两种服务。</p>
+<h3 id="多路复用与多路分解"><a href="#多路复用与多路分解" class="headerlink" title="多路复用与多路分解"></a>多路复用与多路分解</h3><ul>
+<li>多路分解： 将运输层报文段中的数据交付到正确的套接字。</li>
+<li>多路复用： 在源主机从不同的套接字中收集数据块，并为每个数据块封装上首部信息从而生成报文段，然后将报文传递到网络层。</li>
+</ul>
+<p>运输层多路复用要求：<br>套接字有唯一标识符。<br>每个报文段有特殊字符（端口号）来指示该报文段所要交付到的套接字。</p>
+<ul>
+<li>端口号：一个 16 比特的数，在 0 ~ 65535 之间。其中 0 ~ 1023 是周知端口号，是受限制的。</li>
+</ul>
+<h4 id="无连接的多路复用与多路分解"><a href="#无连接的多路复用与多路分解" class="headerlink" title="无连接的多路复用与多路分解"></a>无连接的多路复用与多路分解</h4><p>一个 UDP 套接字由（目的IP地址，目的端口号）标识。注意是用来标识，不是只有这两个相关字段，还有源端口号、源IP地址字段。源端口号和目的端口号按传递方向反转。</p>
+<p>通常，应用程序的客户端让运输层自动地分配端口号，而服务器则分配一个特定的端口号。</p>
+<h4 id="面向连接的多路复用与多路分解"><a href="#面向连接的多路复用与多路分解" class="headerlink" title="面向连接的多路复用与多路分解"></a>面向连接的多路复用与多路分解</h4><p>TCP 套接字是由一个四元组（源 IP 地址，源端口号，目的 IP 地址，目的端口号）来标识的。</p>
+<h3 id="无连接运输：UDP"><a href="#无连接运输：UDP" class="headerlink" title="无连接运输：UDP"></a>无连接运输：UDP</h3><p>选择 UDP 的原因：</p>
+<ul>
+<li>关于何时、发送什么数据的应用层控制更为精细。</li>
+<li>无需连接建立。</li>
+<li>无连接状态。</li>
+<li>分组首部开销小。</li>
+</ul>
+<h4 id="UDP-报文结构"><a href="#UDP-报文结构" class="headerlink" title="UDP 报文结构"></a>UDP 报文结构</h4><div align="center"><br><img src="http://i65.tinypic.com/2iles0m.jpg" alt="chapter3-UDP-Structure"><br></div><br><div align="center">UDP 报文结构</div>
+
+<p>首部只有 4 个字段，每个字段 2 字节 16 位。其中，长度指示了 UDP 报文段中的首部加数据的字节数。</p>
+<h4 id="UDP-检验和"><a href="#UDP-检验和" class="headerlink" title="UDP 检验和"></a>UDP 检验和</h4><p>检验和是 UDP 的差错检测机制。其实现方法是:</p>
+<ol>
+<li>将 UDP 报文按 16 比特进行分组。</li>
+<li>先取前面两个16比特数字进行加运算，有溢出记得回卷，即溢出位加到最低位再进行加运算。</li>
+<li>2中得到的数再跟下一个16比特数字进行加运算，直到报文末端。</li>
+<li>将最终得到的 16 比特的数按位取反即为检验和。</li>
+</ol>
+<p>注：计算之前的检验和为 0，如果传输没有出错，则在接收方处计算的的检验和将是 11111111111111。若不是，则数据传输出错。</p>
+<h3 id="可靠数据传输原理"><a href="#可靠数据传输原理" class="headerlink" title="可靠数据传输原理"></a>可靠数据传输原理</h3><p>下图说明了我们学习可靠数据传输的框架。为上层实体提供的服务抽象是:数据可以通过一条可靠的信道进行传输。借助于可靠信道，传输数据比特就不会受到损坏(由0 变为1 ，或者相反)或丢失，而且所有数据都是按照其发送顺序迸行交付。这恰好就是TCP 向调用它的因特网应用所提供的服务模型。</p>
+<div align="center"><br><img src="http://i66.tinypic.com/xnzz48.jpg" alt="chapter3-TCP-transfer"><br></div><br><div align="center">可靠数据传输:服务模型与服务实现</div>
+
+<h3 id="面向连接的运输：TCP"><a href="#面向连接的运输：TCP" class="headerlink" title="面向连接的运输：TCP"></a>面向连接的运输：TCP</h3><h4 id="TCP-连接"><a href="#TCP-连接" class="headerlink" title="TCP 连接"></a>TCP 连接</h4><h5 id="TCP连接特点"><a href="#TCP连接特点" class="headerlink" title="TCP连接特点"></a>TCP连接特点</h5><ul>
+<li><p>TCP是面向连接的<br>通信前需要建立连接，通信结束需要释放连接。</p>
+</li>
+<li><p>TCP提供可靠交付服务<br>所谓『可靠』指的是：TCP发送的数据无重复、无丢失、无错误、与发送端顺序一致。</p>
+</li>
+<li><p>TCP是面向字节流的<br>所谓『面向字节流』指的是：TCP以字节为单位。虽然传输的过程中数据被划分成一个个数据报，但这只是为了方便传输，接收端最终接受到的数据将与发送端的数据一模一样。</p>
+</li>
+<li><p>TCP提供全双工通信<br>所谓『全双工通信』指的是：TCP的两端既可以作为发送端，也可以作为接收端。</p>
+</li>
+<li><p>一条TCP连接的两端只能有两个端点<br>TCP只能提供点到点的通信，而UDP可以任意方式的通信。</p>
+</li>
+</ul>
+<h5 id="TCP连接与套接字"><a href="#TCP连接与套接字" class="headerlink" title="TCP连接与套接字"></a>TCP连接与套接字</h5><p>TCP连接是一种抽象的概念，表示一条可以通信的链路。<br>每条TCP连接有且仅有两个端点，表示通信的双方。且双发在任意时刻都可以作为发送者和接收者。</p>
+<p>一条TCP连接的两端就是两个套接字。<br>套接字=IP地址:端口号。 </p>
+<p>因此，TCP连接=（套接字1，套接字2）=（IP1:端口号1，IP2:端口号2）</p>
+<h5 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h5><p>起初，服务器和客户端都为CLOSED状态。在通信开始前，双方都得创建各自的传输控制块（TCB）。<br>服务器创建完TCB后便进入LISTEN状态，此时准备接收客户端发来的连接请求。</p>
+<ol>
+<li><p>第一次握手<br>客户端的 TCP 首先向服务器端的 TCP 发送一个特殊的 TCP 报文段。该报文段中不包含应用层数据。但是在报文段的首部中的一个标志位(即SYN 比特)被置为i 。因此，这个特殊报文段被称为 SYN 报文段。另外，客户会随机地选择一个初始序号(client_isn) ，并将此编号放置于该起始的TCP SYN报文段的序号字段中。该报文段会被封装在一个 IP 数据报中，并发送给服务器。</p>
+</li>
+<li><p>第二次握手<br>一旦包含TCP SYN 报文段的 IP 数据报到达服务器主机，服务器会从该数据报中提取出 TCP SYN 报文段，为该 TCP 连接分配 TCP 缓存和变量，并向该客户 TCP 发送允许连接的报文段。这个允许连接的报文段也不包含应用层数据。但是，在报文段的首部却包含3 个重要的信息。首先， SYN 比特被置为1。其次，该 TCP 报文段首部的确认号字段被置为client_isn+1。最后，服务器选择自己的初始序号(server_isn)，并将其放置到 TCP 报文段首部的序号字段中。这个允许连接的报文段实际上表明了”我收到了你发起建立连接的 SYN 分组，该分组带有初始序号client_isn。我同意建立该连接。我自己的初始序号是server_isn。”该允许连接的报文段有时被称为SYNACK 报文段(SYNACK segment) 。</p>
+</li>
+<li><p>第三次握手<br>在收到 SYNACK 报文段后，客户也要给该连接分配缓存和变量。客户主机则向服务器发送另外一个报文段;这最后一个报文段对服务器的允许连接的报文段进行了确认(该客户通过将值server_isn+1 放置到 TCP 报文段首部的确认字段中来完成此项工作) 。因为连接已经建立了，所以该S刊比特被置为0 。该三次握手的第三个阶段可以在报文段负载中携带客户到服务器的数据。</p>
+</li>
+</ol>
+<p>一旦完成这3个步骤，客户和服务器主机就可以相互发送包括数据的报文段了。在以后每一个报文段中， SYN 比特都将被置为0。注意到为了创建该连接，在两台主机之间发送了3个分组，如下图所示。由于这个原因，这种连接创建过程通常被称为 3 次握手(three-way handshake) 。</p>
+<div align="center"><br><img src="http://i68.tinypic.com/29vhuah.jpg" alt="chapter3-TCP-3handshake"><br></div><br><div align="center">TCP 三次握手:报文段交换</div>
+
+<ul>
+<li>为什么连接建立需要三次握手，而不是两次握手？</li>
+</ul>
+<p>防止失效的连接请求报文段被服务端接收，从而产生错误。</p>
+<p>若建立连接只需两次握手，客户端并没有太大的变化，仍然需要获得服务端的应答后才进入ESTABLISHED状态，而服务端在收到连接请求后就进入ESTABLISHED状态。此时如果网络拥塞，客户端发送的连接请求迟迟到不了服务端，客户端便超时重发请求，如果服务端正确接收并确认应答，双方便开始通信，通信结束后释放连接。此时，如果那个失效的连接请求抵达了服务端，由于只有两次握手，服务端收到请求就会进入ESTABLISHED状态，等待发送数据或主动发送数据。但此时的客户端早已进入CLOSED状态，服务端将会一直等待下去，这样浪费服务端连接资源。</p>
+<p><strong>三次握手后</strong><br>发送方通过套接字向TCP的发送缓存中传输数据，当数据达到最大报文段长（MSS）时TCP就将缓存加上一个TCP首部形成报文段发送给接收方的TCP接收缓存。</p>
+<h5 id="TCP四次挥手"><a href="#TCP四次挥手" class="headerlink" title="TCP四次挥手"></a>TCP四次挥手</h5><div align="center"><br><img src="http://i65.tinypic.com/j5bmm1.jpg" alt="chapter3-TCP-closing-connection"><br></div><br><div align="center">TCP 四次挥手:连接释放</div>
+
+<p>TCP连接的释放一共需要四步，因此称为『四次挥手』。<br>我们知道，TCP连接是双向的，因此在四次挥手中，前两次挥手用于断开一个方向的连接，后两次挥手用于断开另一方向的连接。</p>
+<ol>
+<li>第一次挥手<br>若客户端认为数据发送完成，则它需要向服务器发送连接释放请求。该请求只有报文头，头中携带的主要参数为：<br>FIN=1，seq=u。此时，客户端将进入FIN-WAIT-1状态。</li>
+</ol>
+<ul>
+<li>PS1：FIN=1表示该报文段是一个连接释放请求。</li>
+<li>PS2：seq=u，u-1是客户端向服务器发送的最后一个字节的序号。</li>
+</ul>
+<ol start="2">
+<li>第二次挥手<br>服务器收到连接释放请求后，会通知相应的应用程序，告诉它客户端向服务器这个方向的连接已经释放。此时服务器进入CLOSE-WAIT状态，并向客户端发送连接释放的应答，其报文头包含：<br>ACK=1，seq=v，ack=u+1。</li>
+</ol>
+<ul>
+<li>PS1：ACK=1：除TCP连接请求报文段以外，TCP通信过程中所有数据报的ACK都为1，表示应答。</li>
+<li>PS2：seq=v，v-1是服务器向客户端发送的最后一个字节的序号。</li>
+<li>PS3：ack=u+1表示希望收到从第u+1个字节开始的报文段，并且已经成功接收了前u个字节。</li>
+</ul>
+<p>客户端收到该应答，进入FIN-WAIT-2状态，等待服务器发送连接释放请求。</p>
+<p>第二次挥手完成后，客户端到服务器方向的连接已经释放，服务器不会再接收数据，客户端也不会再发送数据。但服务器到客户端方向的连接仍然存在，服务器可以继续向客户端发送数据。</p>
+<ol start="3">
+<li><p>第三次挥手<br>当服务器向客户端发完所有数据后，向客户端发送连接释放请求，请求头：FIN=1，ACK=1，seq=w，ack=u+1。服务器便进入LAST-ACK状态。</p>
+</li>
+<li><p>第四次挥手<br>客户端收到释放请求后，向服务器发送确认应答，此时客户端进入TIME-WAIT状态。该状态会持续2MSL(Maximum Segment Lifetime最长报文段寿命)时间，若该时间段内没有服务器的重发请求的话，就进入CLOSED状态，撤销TCB(Transmission Control Block传输控制块)。当服务器收到确认应答后，也便进入CLOSED状态，撤销TCB。</p>
+</li>
+</ol>
+<ul>
+<li>为什么客户端要先进入TIME-WAIT状态，等待2MSL时间后才进入CLOSED状态？</li>
+</ul>
+<p>为了保证服务器能收到客户端的确认应答。若客户端发完确认应答后直接进入CLOSED状态，那么如果该应答丢失，服务器等待超时后就会重新发送连接释放请求，但此时客户端已经关闭了，不会作出任何响应，因此服务器永远无法正常关闭。</p>
+<h5 id="TCP连接概括"><a href="#TCP连接概括" class="headerlink" title="TCP连接概括"></a>TCP连接概括</h5><p>客户机端TCP发送一个特殊报文段，不包含应用层数据，但首部的SYN置1，并选择一个起始序号client_isn放置到该报文序号字段中。服务器接收后为该TCP建立分配TCP缓存和变量，并发送允许报文段，SYN置1，确认号为client_isn+1，序号段中则是自己的初始序号server_isn，客户端收到这个报文后也会分配缓存和变量。并发送第三个报文，SYN置0，确认字段为server_isn+1，目的是确认信息。这个过程被称作三次握手。连接终止时客户端发出FIN置1的报文，服务器也发挥FIN置1报文，客户端确认后双方释放资源。</p>
+<h4 id="TCP-报文段结构"><a href="#TCP-报文段结构" class="headerlink" title="TCP 报文段结构"></a>TCP 报文段结构</h4><div align="center"><br><img src="http://i65.tinypic.com/2iles0m.jpg" alt="chapter3-TCP-Segment-Structure"><br></div><br><div align="center">TCP 报文段结构</div>
+
+<ul>
+<li>16比特的源端口号和 16比特的目的端口号。用于多路分解和多路复用。</li>
+<li>32比特的序号（sequence number）字段。一个报文段的序号是该报文段数据字段首字节的序号。</li>
+<li>32比特的确认号（Acknowledgement number）字段。主机 A　填充进报文段的确认号是主机 A 期望从主机 B 收到的下一字节的序号。</li>
+<li>16比特的接收窗口（Receive window）字段。用于指示接收方愿意接收的字节数量。</li>
+<li>4比特的首部长度（header length）字段。指示了以32比特的字为单位的 TCP 首部长度。<br>可变与变长的 选项（options）字段。用于发送方与接收方协商最大报文段长度时，或在高速网络环境下作用窗口调节因子时使用。</li>
+<li>6比特的标志（flag）字段。 <ul>
+<li>ACK 是对成功接收一个报文段的确认。</li>
+<li>RST、SYN 和 FIN 用于连接的建立和拆除。</li>
+<li>PSH 被设置时，指示接收方应立即将数据交给上层。</li>
+<li>URG 比特用来指示报文段里存在着被发送端上层实体置为“紧急”的数据。紧急的最后一个字节由16比特的紧急数据指针（Urgent data pointer）字段指出。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注：在实践中，PSH 、URG 和 紧急数据指针并不使用。</p>
+</blockquote>
+<h4 id="往返时间的估计与超时"><a href="#往返时间的估计与超时" class="headerlink" title="往返时间的估计与超时"></a>往返时间的估计与超时</h4><p>如何设置TCP 超时值 </p>
+<ul>
+<li>应大于RTT(Round Trip Time)：但RTT是变化的</li>
+<li>太短: 过早超时，不必要的重传</li>
+<li>太长: 对报文段的丢失响应太慢</li>
+</ul>
+<p>TCP采用超时/重传机制处理报文段丢失</p>
+<p>估计往返时间</p>
+<ul>
+<li>报文段的样本RTT：SampleRTT</li>
+<li>SampleRTT 均值：EstimatedRTT</li>
+<li>EstimatedRTT = 0.875 × EstimeatedRTT + 0.125×SampleRTT</li>
+</ul>
+<p>设置和管理超时重传时间</p>
+<ul>
+<li>TimeoutInterval = EstimatedRTT + 4 × DevRTT</li>
+<li>超时间隔 = 估计RTT + 4 × 偏差RTT</li>
+</ul>
+<h4 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h4><p>PS：网络层传输的数据单元为『数据报』，传输层的数据单元为『报文段』，为了方便起见可以统称为『分组』。</p>
+<p>三种情况:</p>
+<ul>
+<li>A向B发送一个报文段，序号92，包含8字节，交给IP后开始等待一个来自B的确认号为100的报文段。然而确认报文段丢失，超时，A又重发相同报文段。B收到后对比序号发现已经收到过该报文段的一些字节，于是B的TCP确认后，将报文段重复的字节丢弃</li>
+</ul>
+<div align="center"><br><img src="http://i64.tinypic.com/2w2exav.jpg" alt="chapter3-Transport-a-lost-acknowledgment"><br></div><br><div align="center">由于确认丢失而重传</div>
+
+<ul>
+<li>A连续发了两个报文段，92，8和100，20（序号和字节）。B收到两个报文段并发送确认100和200。超时前没有一个确认到达A，超时后A重传92，8的报文，重启定时器。只要第二个报文的ACK在新的超时以前发生到达，第二个报文就不会重传。</li>
+</ul>
+<div align="center"><br><img src="http://i67.tinypic.com/j7ddet.jpg" alt="chapter3-Segment-100-not-retransmitted"><br></div><br><div align="center">报文段100没有重传</div>
+
+<p>和上面一种一样，A发送两个报文段，第一个报文段的确认在网络丢失，但是超时之前收到了第二个报文段的确认报文。因为累积确认机制，A知道B已经收到第二个以及之前的报文，不会重传了。</p>
+<div align="center"><br><img src="http://i66.tinypic.com/33lpbit.jpg" alt="chapter3-Transport-A-cumulative-acknowledgment"><br></div><br><div align="center">累积确认避免了第一个报文段的重传</div>
+
+<p>超时间隔加倍</p>
+<ul>
+<li><p>实际大多数情况下，每次TCP重传时会将下次超时间隔设为先前的两倍</p>
+</li>
+<li><p>当定时器在另外两个事件（收到上层应用数据，收到ACK）中的任意一个启动时，超时间隔又从估计RTT和偏差RTT推算得到。比如一个报文段第一次超时1s，重发，第二次超时就是2s，第三次4s…但是当收到该报文确认时，超时间隔又重置，算是一种拥塞控制</p>
+</li>
+</ul>
+<p>快速重传</p>
+<ul>
+<li>发送方挨个发送大量报文段，如果一个丢失，很可能引起一个接一个冗余ACK（即重复的ACK，上面说过，A连续发了序号为1，2，3，4，5的报文，若B没收到2，却收到了3，4，5，则对2之后的报文都发送确认号为2的ACK）。如果TCP发送方接收到对相同数据的3个冗余ACK，它把这当做一种指示，说明这个重复确认报文段后面的报文都丢失了。一旦收到3个冗余ACK，TCP执行快速重传，即在该报文段的定时器过期之前重传丢失的报文段</li>
+</ul>
+<div align="center"><br><img src="http://i65.tinypic.com/znsspf.jpg" alt="chapter3-Transport-Fast-retransmit"><br></div><br><div align="center">快速重传:在某报文段的定时器过期之前重传丢失的报文段</div>
+
+<h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><ul>
+<li><p>什么是流量控制？<br>如果发送者发送过快，接收者来不及接收，那么就会有分组丢失。为了避免分组丢失，控制发送者的发送速度，使得接收者来得及接收，这就是流量控制。<br>流量控制是一个速度匹配服务，发送方发送速率与接收方程序读取速率相匹配</p>
+</li>
+<li><p>流量控制的目的？<br>流量控制根本目的是防止分组丢失，它是构成TCP可靠性的一方面。</p>
+</li>
+<li><p>如何实现流量控制？<br>由滑动窗口协议（连续ARQ协议，如GBN和SR）实现，TCP让发送方维护一个称为接收窗口rwnd的变量，用于给发送方指示接收方还有多少可用缓存。因为是全双工通信，双方都维护接收窗口变量。B把rwnd值放入给A的报文段接收窗口字段中，通知A自己还有多少缓存空间，A控制未确认的数据量小于rwnd，即发送方的发送窗口不可以大于接收方发回的窗口大小。<br>滑动窗口协议既保证了分组无差错、有序接收，也实现了流量控制。</p>
+</li>
+<li><p>流量控制引发的死锁<br>考虑一种特殊的情况，就是接收方若没有缓存足够使用，就会发送零窗口大小的报文，此时发送放将发送窗口设置为0，停止发送数据。之后接收方有足够的缓存，发送了非零窗口大小的报文，但是这个报文在中途丢失的，发送者一直等待下去，而接收者以为发送者已经收到该应答，等待接收新数据，这样双方就相互等待，从而产生死锁。</p>
+</li>
+<li><p>持续计时器<br>为了避免流量控制引发的死锁，TCP使用了持续计时器。每当发送者收到一个零窗口的应答后就启动该计时器。时间一到便主动发送报文询问接收者的窗口大小。若接收者仍然返回零窗口，则重置该计时器继续等待；若窗口不为0，则表示应答报文丢失了，此时重置发送窗口后开始发送，这样就避免了死锁的产生。</p>
+</li>
+<li><p>一条TCP连接每一侧主机都设置了缓存，当TCP连接收到正确有序的字节后，将数据放入缓存，应用从缓存中读取。若应用较忙，发送方发送太快太多，可能会造成缓存溢出。</p>
+</li>
+<li><p>TCP发送方因为IP网络的拥塞而降速（超时间隔加倍），属于拥塞控制，不属于流量控制，虽然都是降速。</p>
+</li>
+<li><p>UDP无流量控制，缓存溢出就溢出了。</p>
+</li>
+</ul>
+<h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><h5 id="拥塞原因与代价"><a href="#拥塞原因与代价" class="headerlink" title="拥塞原因与代价"></a>拥塞原因与代价</h5><p>丢包一般是当前网络拥塞时由于路由器缓存溢出引起，因此分组重传能作为网络拥塞的征兆，但分组重传无法解决网络拥塞。</p>
+<ul>
+<li>拥塞原因与代价 </li>
+</ul>
+<ol>
+<li><p>情况一：两个发送方和一台无穷大缓存的路由器。<br>容量为R的共享式输出链路上传输。<br>当发送速率超过R/2时，路由器的排队分组就会无限增加，源和目的平均时延变成无穷大。</p>
+</li>
+<li><p>情况二：两个发送方和一台有限缓存的路由器。<br>分组到达一个已满的缓存时会被丢弃，发送方必须执行重传以补偿因为缓存溢出丢弃的分组。<br>发送方遇到高时延时，进行的不必要重传引起路由器转发不必要的分组副本。</p>
+</li>
+<li><p>情况三：4个发送方和具有优先缓存的多台路由器及多条路径。<br>当一个分组沿一条路径被丢弃时，每个上游路由器用于转发该分组到丢弃该分组使用的传输容量被浪费。</p>
+</li>
+</ol>
+<ul>
+<li>拥塞控制 和 流量控制 的区别？</li>
+</ul>
+<ol>
+<li>拥塞控制：拥塞控制是作用于网络的，它是防止过多的数据注入到网络中，避免出现网络负载过大的情况。</li>
+<li>流量控制：流量控制是作用于接收者的，它是控制发送者的发送速度从而使接收者来得及接收。</li>
+</ol>
+<ul>
+<li>拥塞控制的目的？ </li>
+</ul>
+<ol>
+<li>缓解网络压力。</li>
+<li>保证分组按时到达。</li>
+</ol>
+<h5 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h5><p>拥塞控制可以分为端到端的和网络辅助两种，对应网络层是否为运输层拥塞机制提供显式帮助。TCP是端到端的拥塞机制，因为其网络下层IP协议并不提供拥塞机制。按照前面说的，首先TCP可以通过控制拥塞窗口的值控制发送方流量，通过超时和连收3个冗余ACK判断网络拥塞，如果出现就缩小窗口，否则就趁机放大窗口利用空闲带宽。</p>
+<h4 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h4><p>TCP必须用端到端拥塞控制，因为IP层不向端系统提供显式网络拥塞反馈，TCP让每一个发送方根据感知到的拥塞程度限制其发送速率。</p>
+<p>如何限制其发送速率？</p>
+<ul>
+<li>维护拥塞窗口cwnd值（注意流量控制使用接收窗口rwnd值）</li>
+<li>发送方未确认数据量 &lt;= min { cwnd , rwnd }</li>
+</ul>
+<p>如何感知它到目的地路径存在拥塞？</p>
+<ul>
+<li>丢包：超时或收到3个冗余ACK。</li>
+<li>TCP是自计时的，使用确认来触发增大它的拥塞窗口长度（及其传输速率）。</li>
+</ul>
+<p>TCP发送方如何确定发送速率？</p>
+<ul>
+<li>一个丢失的报文意味着拥塞，当丢失报文段时应当降低速率（当前速度不能正常交付，得慢点）</li>
+<li>先前未确认报文段的确认到达时，增加发送方速率（当前速度能够正常交付，说明可以再快点）</li>
+<li>带宽探测（试探）：TCP发送方增加速率，丢包，从该速率后退，再往前探测….（因为拥塞情况是波动的，得尽力保持在最高速率）</li>
+</ul>
+<h5 id="TCP拥塞控制算法"><a href="#TCP拥塞控制算法" class="headerlink" title="TCP拥塞控制算法"></a>TCP拥塞控制算法</h5><ul>
+<li><p>慢启动算法 和 拥塞避免算法。</p>
+</li>
+<li><p>发送方维护一个发送窗口，发送窗口的大小取决于网络的拥塞情况和接收窗口的大小，发送窗口是动态变化的。</p>
+</li>
+<li><p>发送方还维护一个慢启动门限。</p>
+</li>
+</ul>
+<p>发送窗口 &lt; 慢启动门限：使用慢启动算法<br>发送窗口 &gt; 慢启动门限：使用拥塞避免算法<br>发送窗口 = 慢启动门限：使用慢启动算法或拥塞避免算法</p>
+<p>算法的具体过程： </p>
+<ol>
+<li>慢启动 </li>
+</ol>
+<ul>
+<li>一开始cwnd只设为一个MSS的较小值（这就是『慢』，不过瞬间指数级加速）。</li>
+<li>收到一个确认，cwnd增加一个MSS ——&gt; 每过一个RTT，cwnd翻番，发送速率翻倍（1，2，4…每次发的也多一个）。</li>
+<li>丢包（拥塞）结束慢启动 。<br>将ssthresh（慢启动阈值）设置为cwnd/2，cwnd置为1重新开始慢启动<br>当cwnd=ssthresh时，结束慢启动，TCP转移到拥塞避免模式<br>收到3个冗余ACK，执行快速重传，进入快速恢复模式</li>
+</ul>
+<ol start="2">
+<li>拥塞避免 </li>
+</ol>
+<ul>
+<li>进入拥塞避免状态，cwnd值是上次遇到拥塞时的一半。</li>
+<li>每个RTT只将cwnd值增加一个MSS/cwnd字节。</li>
+<li>丢包，结束拥塞避免。<br>超时：ssthresh更新为cwnd的一半，cwnd置为1个MSS，返回慢启动状态<br>冗余ACK：ssthresh更新为cwnd的一半，cwnd值减半，进入快速恢复状态</li>
+</ul>
+<ol start="3">
+<li>快速恢复 </li>
+</ol>
+<ul>
+<li>快速恢复中，每个冗余ACK，cwnd 增加一个MSS，当丢失报文的ACK到达时，TCP降低cwnd，进入拥塞避免状态。</li>
+<li>超时：同慢启动和拥塞避免。</li>
+</ul>
+<p>总体上来说，如果没有拥塞，TCP每收到一个正常的确认报文，就将窗口扩大一个MSS（最大报文段），也就是多发一个报文，如果出现拥塞就将窗口大小缩小一半。该算法称作加性增，乘性减。</p>
+<p>首先，因为在开始阶段窗口初值一般仅为一个MSS，这样在很长一段时间内速率会很低，而可用带宽可能很大，为了尽快探明最大可用带宽，启动阶段每经过一个RTT，窗口值就增大一倍，直到出现一个报文丢失，这个特殊过程才结束。该过程称作慢启动。其次，遇到一个超时事件的时候，TCP将窗口值设成1个MSS，并慢启动到丢失报文前窗口值的一半。但是收到3个冗余ACK的时候并不慢启动而是直接减半，这种行为叫快速恢复。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//mars687.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/06/19/HTML标记与文档结构/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mars687's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tbdyfe@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">11</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/DOM/">DOM<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DataStructure/">DataStructure<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/IFE/">IFE<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Network/">Network<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/OperatingSystem/">OperatingSystem<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ajax/">ajax<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端/">移动端<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">50</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>星辰大海
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//mars687.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            FlexBox布局【转】 | 
+        
+        星辰大海
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#330066">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #6600cc;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #330066 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #330066 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #330066 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #6600cc;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="星辰大海">
+    <meta name="msapplication-starturl" content="http://blog.venus10.com/2018/05/16/FlexBox布局/">
+    <meta name="msapplication-navbutton-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="星辰大海">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.venus10.com/2018/05/16/FlexBox布局/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="FlexBox布局【转】 | 星辰大海">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Wed May 16 2018 20:25:16 GMT+0800">
+        <meta property="article:modified_time" content="Wed May 16 2018 21:25:50 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.venus10.com/2018/05/16/FlexBox布局/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.venus10.com/2018/05/16/FlexBox布局/index.html",
+    "headline": "FlexBox布局【转】",
+    "datePublished": "Wed May 16 2018 20:25:16 GMT+0800",
+    "dateModified": "Wed May 16 2018 21:25:50 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Mars687",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Welcome to my world!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "星辰大海",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-Flexbox-？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是 Flexbox ？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么情况下不建议使用-Flexbox-？"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么情况下不建议使用 Flexbox ？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本要素"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本要素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#父级（弹性容器）属性"><span class="post-toc-number">4.</span> <span class="post-toc-text">父级（弹性容器）属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#display"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">display</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-direction"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">flex-direction</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-wrap"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">flex-wrap</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-flow（定义在弹性容器中）"><span class="post-toc-number">4.0.4.</span> <span class="post-toc-text">flex-flow（定义在弹性容器中）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#justify-content"><span class="post-toc-number">4.0.5.</span> <span class="post-toc-text">justify-content</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#align-items"><span class="post-toc-number">4.0.6.</span> <span class="post-toc-text">align-items</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#align-content"><span class="post-toc-number">4.0.7.</span> <span class="post-toc-text">align-content</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子项（弹性项）的属性"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">子项（弹性项）的属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#order"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">order</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-grow"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">flex-grow</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-shrink"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">flex-shrink</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex-basis"><span class="post-toc-number">4.1.4.</span> <span class="post-toc-text">flex-basis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#flex"><span class="post-toc-number">4.1.5.</span> <span class="post-toc-text">flex</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#align-self"><span class="post-toc-number">4.1.6.</span> <span class="post-toc-text">align-self</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 36 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                FlexBox布局【转】
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mars687</strong>
+        <span>5月 16, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=FlexBox布局【转】&url=http://blog.venus10.com/2018/05/16/FlexBox布局/index.html&pic=http://blog.venus10.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=FlexBox布局【转】&url=http://blog.venus10.com/2018/05/16/FlexBox布局/index.html&via=Mars687" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.venus10.com/2018/05/16/FlexBox布局/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://blog.venus10.com/2018/05/16/FlexBox布局/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="什么是-Flexbox-？"><a href="#什么是-Flexbox-？" class="headerlink" title="什么是 Flexbox ？"></a>什么是 Flexbox ？</h2><p>Flexbox 是 flexible box 的简称，是 CSS3 引入的布局模式。它决定了元素如何在页面上排列，使它们能在不同的屏幕尺寸和设备下可预测地展现出来。</p>
+<p>它之所以被称为 Flexbox ，是因为它能够扩展和收缩 flex 容器内的元素，以最大限度地填充可用空间。与以前布局方式（如 table 布局和浮动元素内嵌块元素）相比，Flexbox 是一个更强大的方式：</p>
+<ul>
+<li>在不同方向排列元素</li>
+<li>重新排列元素的显示顺序</li>
+<li>更改元素的对齐方式</li>
+<li>动态地将元素装入容器</li>
+</ul>
+<p>Flexbox 布局模式旨在为布局，对齐和分布容器内的子项提供一种更加高效的方式，即使这些玩意儿的大小是未知的或者动态变化的。</p>
+<p>Flex布局背后的主要思想是——给指定的容器提供修改其子项的宽、高乃至顺序的能力，并且足够完美的去填充可用的空间（主要是为了适应各种各样的显示设备和屏幕大小）。</p>
+<p>一个使用了Flex布局的容器，将会扩展其子项以至于填充起可用的空间，或者缩小他们以防止溢出容器。</p>
+<p>有一个相当重要的一点，FlexBox布局的方向不像常规布局（块就是垂直从上到下，行就是水平从左到右），它是不可预知方向的。而那些常规的适合页面布局，但对于作用在大型或者复杂的应用程序（特别是当他涉及到方向改变、大小变化、拉伸和收缩等）就缺乏灵活性。</p>
+<p><strong>注意</strong>： FlexBox布局最适用于应用程序的组件和小规模布局，而网格布局更适用于大规模的布局。</p>
+<h2 id="什么情况下不建议使用-Flexbox-？"><a href="#什么情况下不建议使用-Flexbox-？" class="headerlink" title="什么情况下不建议使用 Flexbox ？"></a>什么情况下不建议使用 Flexbox ？</h2><p>虽然 Flexbox 非常适合缩放，对齐和重新排序元素，但以下情况应该尽量避免使用 Flexbox 布局：</p>
+<ul>
+<li>整体页面布局</li>
+<li>完全支持旧浏览器的网站</li>
+</ul>
+<h2 id="基本要素"><a href="#基本要素" class="headerlink" title="基本要素"></a>基本要素</h2><p>因为FlexBox是一整个模块并不是一个单独的属性，它涉及到很多东西包括它的所有设置属性。一些属性是需要被设置在容器（父级元素，称为『弹性容器』），而一些其他的属性需要被设置在子元素（称为『弹性项』）中。</p>
+<p>如果常规布局是基于块布局与内联布局的方向流的，那么弹性布局就是基于“flex-flow流”。请看一下来自W3C规范的这张图，它解释了弹性布局的主要思想。</p>
+<div align="center"><br><img src="http://i67.tinypic.com/2na173b.jpg" alt="flexlyout"><br></div>
+
+<p>基本上，弹性项（flex item）会沿着主轴方向（main-start到main-end）或侧轴方向(cross-start到cross-end)排列。</p>
+<ul>
+<li><p>主轴（main axis） - 弹性项主要是沿着弹性容器的主轴进行排列的。要注意一点，他不一定是水平的；这主要还是看flex-direction属性（见下文）。</p>
+</li>
+<li><p>main-start | main-end - 弹性项将由 main-start 到 main-end 方向放置在容器内。</p>
+</li>
+<li><p>main size - 弹性项在主轴方向的宽度或高度就是主轴的尺寸。弹性项主要的大小属性可以是宽度，也可以是高度属性，由哪一个对着主轴方向决定。</p>
+</li>
+<li><p>cross axis - 与主轴垂直相交的轴线就是侧轴。它的方向由主轴决定。</p>
+</li>
+<li><p>cross-start | cross-end - 弹性行是由弹性项填充起来的，它的配置是从容器的cross-start开始，往cross-end结束。</p>
+</li>
+<li><p>cross size - 弹性项在侧轴方向的宽度或高度就是cross size。cross size根据侧轴的方向来取决是宽度还是高度。</p>
+</li>
+</ul>
+<h2 id="父级（弹性容器）属性"><a href="#父级（弹性容器）属性" class="headerlink" title="父级（弹性容器）属性"></a>父级（弹性容器）属性</h2><div align="center"><br><img src="http://i65.tinypic.com/11c8fns.jpg" alt="flexParent"><br></div>
+
+<h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><p>这个属性是定义在弹性容器上的；根据其值决定是内联还是块布局。这时它的直属下级将会变成flex文档流。</p>
+<pre><code class="css">.container {
+  display: flex; /* or inline-flex */
+}
+</code></pre>
+<p>需要注意CSS的columns在flex容器里没有效果。</p>
+<h4 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h4><div align="center"><br><img src="http://i66.tinypic.com/eu4kcm.jpg" alt="flex-direction"><br></div>
+
+<p>这个是建立在主轴上的，从而定义了弹性项放置在容器的方向。FlexBox是单方向的布局概念。可以将弹性项视为主要布置在水平行或垂直列中。</p>
+<pre><code class="css">.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre>
+<ul>
+<li><p>row（默认）：在ltr排版方式下从左向右排列；在rtl排版方式下从右向左排列。</p>
+</li>
+<li><p>row-reverse：与row排列方向相反，在ltr排版方式下从右向左排列；在rtl排版方式下从左向右排列。</p>
+</li>
+<li><p>column：类似于row但是是顶部到底部。</p>
+</li>
+<li><p>column-reverse：类似于row-reverse但是是底部到顶部。</p>
+</li>
+</ul>
+<h4 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h4><div align="center"><br><img src="http://i68.tinypic.com/2w7k9x1.jpg" alt="flex-wrap"><br></div>
+
+<p>弹性项默认会全部集中在一行。你可以使用这个属性来改变这种情况，让他们根据你的需要进行自动换行。文档方向在这里也起作用，决定了新的一行被堆叠的方向。</p>
+<pre><code class="css">.container{
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre>
+<ul>
+<li><p>nowrap（默认）：单行显示。在ltr排版下，项目自左向右；在rtl下，自右向左</p>
+</li>
+<li><p>wrap：多行显示。在ltr排版下，项目自左向右；在rtl下，自右向左</p>
+</li>
+<li><p>wrap-reverse：多行显示。与wrap相反</p>
+</li>
+</ul>
+<h4 id="flex-flow（定义在弹性容器中）"><a href="#flex-flow（定义在弹性容器中）" class="headerlink" title="flex-flow（定义在弹性容器中）"></a>flex-flow（定义在弹性容器中）</h4><p>这个是flex-direction和flex-wrap属性的缩写版，它同时定义了弹性容器的主轴和侧轴。默认是row nowrap。</p>
+<blockquote>
+<pre><code>flex-flow: &lt;‘flex-direction’&gt; || &lt;‘flex-wrap’&gt;
+</code></pre></blockquote>
+<h4 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h4><div align="center"><br><img src="http://i68.tinypic.com/orsbw5.jpg" alt="justify-content"><br></div>
+
+<p>这属性是用来定义主轴上的对齐方式的。当所有的弹性项在一行并且无法弹性伸展，或者可伸展但是达到了最大尺寸，它能帮助分配剩下的多余空间。并且当他们行内溢出时，这个属性也可以对项目对齐施加一些控制。</p>
+<pre><code class="css">.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre>
+<ul>
+<li><p>flex-start（默认）：子项会从一行的起始处开始放置</p>
+</li>
+<li><p>flex-end：子项会从一行的结尾处开始放置</p>
+</li>
+<li><p>center：子项会集中在一行的中央</p>
+</li>
+<li><p>space-between：子项会被均匀的分布在行内；首项放置在一行的开始，尾项放置在一行的结束</p>
+</li>
+<li><p>space-around：子项会均匀的按照同等距离分布在一行。需要注意的是，在视觉上会觉得并不等距，因为所有子项在两侧都需要加上同等的空间。首项会与容器开始边缘有一个单位空间的距离，但是与下一项会有两个单位空间的距离，因为下一项也有它自己的适配空间。</p>
+</li>
+</ul>
+<h4 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h4><div align="center"><br><img src="http://i63.tinypic.com/2u9mkjs.jpg" alt="align-items"><br></div>
+
+<p>这用来定义弹性项目在弹性容器的当前侧轴上的默认行为。可以认为是侧轴版的justity-content。</p>
+<pre><code class="css">.container {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<ul>
+<li><p>flex-start：弹性项在侧轴起点边的外边距紧靠住该行在侧轴起始的边。</p>
+</li>
+<li><p>flex-end：弹性项在侧轴起点边的外边距紧靠改行在侧轴结尾的边。</p>
+</li>
+<li><p>center：弹性项会被放置在侧轴的中央。</p>
+</li>
+<li><p>baseline：弹性项会根据他们的基线对齐。</p>
+</li>
+<li><p>stretch（默认）：在侧轴方向上拉伸弹性项以致填充满弹性容器。（任遵从min-width/max-width）</p>
+</li>
+</ul>
+<h4 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h4><div align="center"><br><img src="http://i66.tinypic.com/rkzbya.jpg" alt="align-content"><br></div>
+
+<p>这个属性会根据在侧轴上的额外空间来排列容器的行，类似于justify-content在主轴在对齐单个弹性项的方式。</p>
+<p>注意，这个属性对于只有单行的弹性项来说是没有效果的。</p>
+<pre><code class="css">.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre>
+<ul>
+<li><p>flex-start：行会紧靠容器的起始位</p>
+</li>
+<li><p>flex-end：行紧靠容器的结束位</p>
+</li>
+<li><p>center：行紧靠容器的中间位</p>
+</li>
+<li><p>space-between：每行会均匀分布；首行在容器起始处而最后行在容器结束处</p>
+</li>
+<li><p>space-around：每行根据相同的距离均匀的分布</p>
+</li>
+<li><p>stretch（默认）：每行将会伸展以占用剩余的空间。</p>
+</li>
+</ul>
+<h3 id="子项（弹性项）的属性"><a href="#子项（弹性项）的属性" class="headerlink" title="子项（弹性项）的属性"></a>子项（弹性项）的属性</h3><div align="center"><br><img src="http://i64.tinypic.com/20u7qmh.jpg" alt="flexChildren"><br></div>
+
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a>order</h4><div align="center"><br><img src="http://i67.tinypic.com/1nzfht.jpg" alt="flex-order"><br></div>
+
+<p>一般来说，弹性项会按照文档流的顺序进行布局。然而，order属性可以控制他们出现在弹性容器中的顺序。</p>
+<pre><code class="css">.item {
+  order: &lt;integer&gt;;
+}
+</code></pre>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><div align="center"><br><img src="http://i66.tinypic.com/a2uft5.jpg" alt="flex-grow"><br></div>
+
+<p>这个属性给予弹性项在需要的时候可以伸展的能力。它接收一个不带单位的值作为比例。它规定了在容器内的弹性项可以占用多少的可用空间。</p>
+<p>如果所有的子项都设置了 flex-grow 为1，那么容器内的剩余空间会被均匀的分配给所有自项。如果其中一项的值为2，那么这项的占用空间会是其他项的两倍。</p>
+<pre><code class="css">.item {
+  flex-grow: &lt;number&gt;; /* default 0 */
+}
+</code></pre>
+<p>设置负数是无效的。</p>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p>这定义了弹性项在需要的时候具有伸展的能力。</p>
+<pre><code class="css">.item {
+  flex-shrink: &lt;number&gt;; /* default 1 */
+}
+</code></pre>
+<p>负数是无效的。</p>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>这定义了，当一个元素在被分配到剩余空间之前的默认大小。它可以是一个长度（如：20%，5rem等）或者一个关键字。auto关键字的意思就是『按照我的宽度和高度属性调整尺寸』（他会暂时根据main-size来布局大小直到被弃用）。如果使用关键字content，意思就是『基于内容调整大小』——不过这个关键字并一定能很好的工作，因此很难去测试或者知晓它的兄弟们max-content，min-content和fit-content做了什么。</p>
+<pre><code class="css">.item {
+  flex-basis: &lt;length&gt; | auto; /* default auto */
+}
+</code></pre>
+<p>如果设置为0，额外空间内容不会被分解开来。如果设置成auto，额外空间会基于它的flex-grow的值进行分布。</p>
+<div align="center"><br><img src="http://i63.tinypic.com/29o0qvc.jpg" alt="flex-basis"><br></div>
+
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p>这是flex-grow，flex-shrink和flex-basis组合缩写版。第二个和第三个参数（flex-shrink和flex-basis）是可选的。默认是0 1 auto。</p>
+<p>推荐你使用的这种缩写属性，这比设置单独属性更好。可以智能的通过缩写形式设置值。</p>
+<h4 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h4><div align="center"><br><img src="http://i66.tinypic.com/21c5k4o.jpg" alt="align-self"><br></div>
+
+<p>用来在单独的伸缩项目上覆写默认的对齐方式。</p>
+<p>请看下align-items的解释，帮助你了解可用值。</p>
+<pre><code class="css">.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<p>注意，float，clear和vertical-align在弹性项中会失效。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.cnblogs.com/cydiacen/p/6322573.html" target="_blank" rel="noopener">一篇完整的FlexBox布局指南</a><br>[2] <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guide to Flexbox</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://blog.venus10.com/2018/05/16/FlexBox布局/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.venus10.com/2018/05/16/FlexBox布局/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//mars687.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/20/JavaScript基本概念/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/05/15/CSS-属性的继承/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mars687's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tbdyfe@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">11</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/DOM/">DOM<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DataStructure/">DataStructure<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/IFE/">IFE<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Network/">Network<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/OperatingSystem/">OperatingSystem<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ajax/">ajax<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端/">移动端<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">50</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>星辰大海
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//mars687.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

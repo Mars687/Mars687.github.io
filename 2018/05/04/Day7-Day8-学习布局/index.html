@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Day7-Day8  学习布局 | 
+        
+        星辰大海
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#330066">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #6600cc;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #330066 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #330066 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #330066 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #6600cc;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="星辰大海">
+    <meta name="msapplication-starturl" content="http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/">
+    <meta name="msapplication-navbutton-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="星辰大海">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Day7-Day8  学习布局 | 星辰大海">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Fri May 04 2018 22:48:15 GMT+0800">
+        <meta property="article:modified_time" content="Sat May 19 2018 14:39:04 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html",
+    "headline": "Day7-Day8  学习布局",
+    "datePublished": "Fri May 04 2018 22:48:15 GMT+0800",
+    "dateModified": "Sat May 19 2018 14:39:04 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Mars687",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Welcome to my world!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "星辰大海",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文档流"><span class="post-toc-number">1.</span> <span class="post-toc-text">文档流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定位-position"><span class="post-toc-number">2.</span> <span class="post-toc-text">定位(position)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#静态定位"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">静态定位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相对定位"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">相对定位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绝对定位"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">绝对定位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定定位"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">固定定位</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局实例"><span class="post-toc-number">3.</span> <span class="post-toc-text">布局实例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个两栏布局，左侧占30-宽度，右侧占70-宽度"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个两栏布局，左侧固定宽度-200px-，右侧根据浏览器宽度进行自适应变化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">实现一个两栏布局，左侧固定宽度(200px)，右侧根据浏览器宽度进行自适应变化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个三栏布局，左侧固定宽度-150px-，右侧固定宽度-200px-，中间部分宽度随浏览器宽度变化而自适应变化"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">实现一个三栏布局，左侧固定宽度(150px)，右侧固定宽度(200px)，中间部分宽度随浏览器宽度变化而自适应变化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个三栏布局，左侧固定宽度-150px-，中间固定宽度-500px-，右侧根据浏览器宽度变化而自适应变化"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">实现一个三栏布局，左侧固定宽度(150px)，中间固定宽度(500px)，右侧根据浏览器宽度变化而自适应变化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计稿"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">设计稿</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 36 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Day7-Day8  学习布局
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mars687</strong>
+        <span>5月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Day7-Day8  学习布局&url=http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html&pic=http://blog.venus10.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Day7-Day8  学习布局&url=http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html&via=Mars687" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p>很多人或者文章称之为文档流或者普通文档流，其实标准里根本就没有这个词。如果把文档流直译为英文就是 document flow ，但标准里只有另一个词，叫做<a href="http://www.w3.org/TR/CSS2/visuren.html#normal-flow" target="_blank" rel="noopener">普通流</a>（normal  flow)，或者称之为常规流。但由于很多中文翻译的书就是这么来的，大家更习惯文档流的称呼。<sup>[1]</sup></p>
+<p>文档流是文档中可显示对象在排列时所占用的位置。比如网页的div标签它默认占用的宽度位置是一整行，p标签默认占用宽度也是一整行，因为div标签和p标签是块状对象。 网页中大部分对象默认是占用文档流，也有一些对象是不占文档流的，比如表单中隐藏域。当然我们也可以让占用文档流的元素转换成不占文档流，这就要用到CSS中属性position来控制。<sup>[2]</sup></p>
+<h2 id="定位-position"><a href="#定位-position" class="headerlink" title="定位(position)"></a>定位(position)</h2><p>定位的整个想法是允许我们覆盖上面描述的基本文档流行为，以产生有趣的效果。</p>
+<h3 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h3><p>静态定位是每个元素获取的默认值——它只是意味着“将元素放入它在文档布局流中的正常位置 。</p>
+<blockquote>
+<pre><code>position: static;
+</code></pre></blockquote>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>它与静态定位非常相似，占据在正常的文档流中，除了你仍然可以修改它的最终位置，包括让它与页面上的其他元素重叠。可依据left，right，top，bottom等属性在正常文档流中偏移位置。</p>
+<blockquote>
+<pre><code>position: relative;
+</code></pre></blockquote>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>将对象从文档流中拖出，使用left，right，top，bottom等属性相对于其最接近的一个最有定位设置的父对象进行绝对定位。如果不存在这样的父对象，则依据body对象。而其层叠通过z-index属性定义 。</p>
+<blockquote>
+<pre><code>position: absolute;
+</code></pre></blockquote>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p> 固定定位与绝对定位的工作方式完全相同，只有一个主要区别————绝对定位固定元素是相对于 &lt;html&gt; 元素或其最近的定位祖先，而固定定位固定元素则是相对于浏览器视口本身。 这意味着您可以创建固定的有用的UI项目，如持久导航菜单。</p>
+<blockquote>
+<pre><code>position: fixed;
+</code></pre></blockquote>
+<h2 id="布局实例"><a href="#布局实例" class="headerlink" title="布局实例"></a>布局实例</h2><p>分别尝试使用Float、Position或者Flexbox来实现如下需求：</p>
+<h3 id="实现一个两栏布局，左侧占30-宽度，右侧占70-宽度"><a href="#实现一个两栏布局，左侧占30-宽度，右侧占70-宽度" class="headerlink" title="实现一个两栏布局，左侧占30%宽度，右侧占70%宽度"></a>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</h3><ul>
+<li>Float方法</li>
+</ul>
+<p>创建了一个容器container将左右两栏放入其中，这样对于调整左右两栏整体宽度将十分方便。代码中body{margin: 0}重置浏览器默认样式中的外边距（Chrome 66.0默认外边距为8px），使网页外边距为0。这里需要注意 height属性 不可继承，所以除了将 left 和 right 设定为 height: 100% 还需将其所有父元素均设置为 height: 100%。这些父元素包括：container, body, html。只要有一个没有设置，左右两栏就无法显示出来。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局,左侧占30%宽度右侧占70%宽度&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+        }
+        #left, #right {
+            height: 100%;    
+        }
+        #left {
+            background: #afb;
+            width: 30%;
+            float: left;
+        }
+        #right {
+            background: #0af;
+            width: 70%;
+            float: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Position方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局,左侧占30%宽度右侧占70%宽度&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+        }
+        #left, #right {
+            position: absolute;
+            height: 100%;    
+        }
+        #left {
+            background: #afb;
+            width: 30%;
+            left: 0;
+        }
+        #right {
+            background: #0af;
+            width: 70%;
+            right: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Flexbox方法</li>
+</ul>
+<p><strong>flex-grow</strong> 属性给予弹性项在需要的时候可以伸展的能力。它接收一个不带单位的值作为比例。它规定了在容器内的弹性项可以占用多少的可用空间。</p>
+<p>如果所有的子项都设置了 flex-grow 为1，那么容器内的剩余空间会被均匀的分配给所有自项。如果其中一项的值为2，那么这项的占用空间会是其他项的两倍。</p>
+<p><strong>注</strong> container 设定高度为100%，left 和 right 不必再设定高度。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局,左侧占30%宽度右侧占70%宽度&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            display: flex;
+            height: 100%;           
+        }
+        #left {
+            background: #afb;
+            flex-grow: 3;   
+        }
+        #right {
+            background: #0af;
+            flex-grow: 7;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="实现一个两栏布局，左侧固定宽度-200px-，右侧根据浏览器宽度进行自适应变化"><a href="#实现一个两栏布局，左侧固定宽度-200px-，右侧根据浏览器宽度进行自适应变化" class="headerlink" title="实现一个两栏布局，左侧固定宽度(200px)，右侧根据浏览器宽度进行自适应变化"></a>实现一个两栏布局，左侧固定宽度(200px)，右侧根据浏览器宽度进行自适应变化</h3><ul>
+<li>Float方法</li>
+</ul>
+<p>1.给 container 设定 margin-left 用于放置左侧固定栏。<br>2.left 设定左浮动, 用负外边距将其移动到正确位置。<br>3.right 设定有浮动，width: 100%, 以自适应浏览器宽度变化。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局，左侧固定宽度(200px)，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            margin-left: 200px;                      
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 200px;  
+            float: left;
+            margin-left: -200px;
+        }
+        #right {
+            height: 100%;
+            width: 100%;
+            background: #0af;
+            float: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Position方法</li>
+</ul>
+<p>1.给 container 设定 margin-left 用于放置左侧固定栏。<br>2.left 设定绝对定位将其移动到正确位置。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局，左侧固定宽度(200px)，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            margin-left: 200px;              
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 200px; 
+            position: absolute;
+            left: 0;
+        }
+        #right {
+            height: 100%;
+            width: 100%;
+            background: #0af;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Flexbox方法</li>
+</ul>
+<p>left 固定宽度200px, 由于容器 container 中只有两项，右侧设置 flex-grow :1 即可将容器内的剩余空间全部分配给 right。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;两栏布局，左侧固定宽度(200px)，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            display: flex;
+            height: 100%;           
+        }
+        #left {
+            background: #afb;
+            width: 200px;  
+        }
+        #right {
+            background: #0af;
+            flex-grow: 1;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化"><a href="#实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化" class="headerlink" title="实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化"></a>实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</h3><ul>
+<li>Float方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局，右侧固定宽度(200px)，左侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            margin-right: 200px;              
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 100%;
+            float: left;
+        }
+        #right {
+            height: 100%;
+            background: #0af;
+            width: 200px; 
+            float: left;
+            margin-right: -200px;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Position方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局，右侧固定宽度(200px)，左侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            margin-right: 200px;              
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 100%;
+        }
+        #right {
+            height: 100%;
+            background: #0af;
+            width: 200px; 
+            position: absolute;
+            top: 0;  /*将右栏提到与左栏同一行*/
+            right: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Flex方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;两栏布局，右侧固定宽度(200px)，左侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container{
+            display: flex;
+            height: 100%;             
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            flex-grow: 1;
+        }
+        #right {
+            height: 100%;
+            background: #0af;
+            width: 200px; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="实现一个三栏布局，左侧固定宽度-150px-，右侧固定宽度-200px-，中间部分宽度随浏览器宽度变化而自适应变化"><a href="#实现一个三栏布局，左侧固定宽度-150px-，右侧固定宽度-200px-，中间部分宽度随浏览器宽度变化而自适应变化" class="headerlink" title="实现一个三栏布局，左侧固定宽度(150px)，右侧固定宽度(200px)，中间部分宽度随浏览器宽度变化而自适应变化"></a>实现一个三栏布局，左侧固定宽度(150px)，右侧固定宽度(200px)，中间部分宽度随浏览器宽度变化而自适应变化</h3><ul>
+<li>Float方法</li>
+</ul>
+<p>1.圣杯布局</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左右固定宽度，中间自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #container {
+            height: 100%;
+            padding-left: 150px;
+            padding-right: 200px;
+        }
+        .column {
+            height: 100%;
+            float: left;  
+        }
+        #center {
+            background: #fa0;
+            width: 100%;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            margin-left: -100%;
+            position: relative;
+            left: -150px;
+        }
+        #right {
+            background: #0af;
+            width: 200px; 
+            margin-right: -200px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.双飞翼布局</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左右固定宽度，中间自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #container {
+            height: 100%;
+        }
+        .column {
+            height: 100%;
+            float: left;  
+        }
+        #center {
+            background: #ccc;
+            width: 100%;
+        }
+        #center-wrap {
+            margin: 0 200px 0 150px;
+            background-color: #fa0;
+            height: 100%;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            margin-left: -100%;
+        }
+        #right {
+            background: #0af;
+            width: 200px; 
+            margin-left: -200px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;
+            &lt;div id=&quot;center-wrap&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Position方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左右固定宽度，中间自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #container {
+            height: 100%;
+            margin-left: 150px;
+            margin-right: 200px;
+        }
+        .column {
+            height: 100%; 
+        }
+        #center {
+            background: #fa0;
+            width: 100%;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #right {
+            background: #0af;
+            width: 200px; 
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Flex方法</li>
+</ul>
+<p>注意弹性项会按照常规流的顺序进行布局，因此 html 中左、中、右三栏应按布局顺序书写。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左右固定宽度，中间自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container {
+            display: flex;
+            height: 100%;             
+        }
+        #center {
+            background: #fa0;
+            height: 100%;
+            flex-grow: 1;
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 150px;
+        }
+        #right {
+            height: 100%;
+            background: #0af;
+            width: 200px; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;center&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>当然我们也可以使用 order 属性来规定左、中、右三栏的显示顺序。<br><strong>注意</strong> order的值为整数，当不是整数时等同于没有定义该属性。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左右固定宽度，中间自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #container {
+            display: flex;
+            height: 100%;             
+        }
+        #center {
+            background: #fa0;
+            height: 100%;
+            flex-grow: 1;
+            order: 2;
+        }
+        #left {
+            background: #afb;
+            height: 100%;
+            width: 150px;
+            order: 1;
+        }
+        #right {
+            height: 100%;
+            background: #0af;
+            width: 200px; 
+            order: 3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;center&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="实现一个三栏布局，左侧固定宽度-150px-，中间固定宽度-500px-，右侧根据浏览器宽度变化而自适应变化"><a href="#实现一个三栏布局，左侧固定宽度-150px-，中间固定宽度-500px-，右侧根据浏览器宽度变化而自适应变化" class="headerlink" title="实现一个三栏布局，左侧固定宽度(150px)，中间固定宽度(500px)，右侧根据浏览器宽度变化而自适应变化"></a>实现一个三栏布局，左侧固定宽度(150px)，中间固定宽度(500px)，右侧根据浏览器宽度变化而自适应变化</h3><ul>
+<li>Float方法</li>
+</ul>
+<p>1.类“圣杯布局”<br>通过给容器 container 设定 padding-left，为左、中两栏提供放置空间。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左中固定宽度，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-width: 650px;
+        }
+        #container {
+            height: 100%;
+            padding-left: 650px;
+        }
+        .column {
+            height: 100%; 
+            float: left;
+        }
+        #center {
+            background: #fa0;
+            width: 500px;
+            margin-left: -500px;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            margin-left: -650px;
+        }
+        #right {
+            background: #0af;
+            width: 100%; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.类“双飞翼布局”<br>通过给 right 添加一个包裹层 right-wrap，设定 margin-left 为左、中两栏提供放置空间。<br>注意，先写 right，因为“双飞翼布局”是先放置好有包裹层的自适应栏，再将剩余栏通过浮动、负外边距等方式进行定位布置。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左中固定宽度，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-width: 650px;
+        }
+        #container {
+            height: 100%;
+        }
+        .column {
+            height: 100%; 
+            float: left;
+        }
+        #center {
+            background: #fa0;
+            width: 500px;
+            margin-left: -100%;
+            position: relative;
+            left: 150px;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            margin-left: -100%;
+        }
+        #right {
+            background: #eee;
+            width: 100%; 
+        }
+        #right-wrap {
+            background: #0af;
+            height: 100%;
+            margin-left: 650px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;
+            &lt;div id=&quot;right-wrap&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt; 
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Position方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左中固定宽度，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-width: 650px;
+        }
+        #container {
+            height: 100%;
+            margin-left: 650px;
+        }
+        .column {
+            height: 100%; 
+        }
+        #center {
+            background: #fa0;
+            width: 500px;
+            position: absolute;
+            left: 150px;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #right {
+            background: #0af;
+            width: 100%; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Flex方法</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;三栏布局，左中固定宽度，右侧自适应&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            min-width: 650px;
+        }
+        #container {
+            height: 100%;
+            display: flex;
+        }
+        .column {
+            height: 100%; 
+        }
+        #center {
+            background: #fa0;
+            width: 500px;
+        }
+        #left {
+            background: #afb;
+            width: 150px;
+        }
+        #right {
+            background: #0af; 
+            flex-grow: 1; 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt;        
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>注意，right 不要设置 width: 100%, 会出现错误的效果。</p>
+<h3 id="设计稿"><a href="#设计稿" class="headerlink" title="设计稿"></a>设计稿</h3><p>设计稿描述：</p>
+<ul>
+<li>设计稿分为头部，中间的Banner，主导航，内容区域，底部。</li>
+<li>头部区域为100%宽的一个深色背景，头部中间有一块960px的定宽居中区域，里面包括了左边的Logo和右上角导航。</li>
+<li>Banner为100%宽的区块，中间右下方有banner轮显的当前图片数字的示例，其中正在显示的图片对应的数字有特殊样式（注意不需要实现轮显banner的业务逻辑，只是按照设计稿做静态样式）。</li>
+<li>主导航区域，有一个100%宽的灰色线条，线条之上，在中间960px区域是导航菜单，当前正在浏览页对应的菜单有特殊样式。</li>
+<li>主要内容区域，宽度为960px，里面每个内容都有至少80px的padding，每一个内容的宽度均为自适应，可以使用flex布局。</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;IFE布局设计稿&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            height: 70px;
+        }
+        #header {
+            width: 960px;
+            height: 60px;
+            margin: 0 auto;
+            color: #fff;
+            position: relative;/* header设置相对定位header nav设置绝对定位才能使导航栏靠右对齐，并在容器内显示*/
+        }
+        #logo {
+            font-size: 20px;
+            line-height: 60px;
+        }
+        #header nav {
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+        .navigation {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            margin: 0 3px;
+        }
+        #banner {
+            height: 300px;
+            width: 100%;
+            background-color: #4f4;
+
+        }
+        #ban {
+            width: 960px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #button {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+        #button a {
+            text-decoration: none;
+            color:#222;
+            display:inline-block;
+            width:30px;
+            height:35px;
+            opacity:0.6;
+            background-color:#fff;
+            line-height:35px;
+            text-align:center;
+            border:1px solid #111;
+
+        }
+        #button #active {
+            opacity:1; /*两个id特指度相较于#button a 更高，才能覆盖opacity属性*/
+            padding-top:15px;
+        }
+        #button a:hover {
+            opacity: 1;
+            padding-top: 15px;
+        }
+        #main-nav {
+            margin-top: 20px;
+            width: 100%;
+            height: 51px;
+            border-bottom: solid 1px #999;
+            z-index: 1;
+        }
+        #nav-item {
+            width: 960px;
+            height: 50px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #nav-item a {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            border: solid 1px #999;
+            border-bottom: 0;
+            line-height: 50px;
+            margin: 0 -3px;
+            border-radius: 20px 20px 0 0;
+            background-color: #eee;
+            color: #333;
+        }
+        #nav-item #home {
+            background-color: #fff;
+            height: 51px;
+            z-index: 2;
+        }
+        #nav-item a:hover {
+            background-color: #fff;
+            height: 51px;
+            z-index: 2;
+        }
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        .content {
+            display: flex;
+            margin: 10px -10px 10px 0;
+        }
+        .item {
+            height: 60px;
+            border: solid 1px #999;
+            margin-right: 10px;
+            padding: 80px;
+            flex: 1;
+        }
+        #content1, #content2 {
+            flex: 1.5;
+        }
+        footer {
+            width: 960px;
+            height: 70px;
+            background: #333;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            padding-top: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;div id=&quot;header&quot;&gt;
+            &lt;div id=&quot;logo&quot;&gt;Logo&lt;/div&gt;
+            &lt;nav&gt;
+                &lt;a href=&quot;#&quot; class=&quot;navigation&quot;&gt;Github&lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;navigation&quot;&gt;Register&lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;navigation&quot;&gt;Login&lt;/a&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section id=&quot;banner&quot;&gt;
+        &lt;div id=&quot;ban&quot;&gt;
+            &lt;div id=&quot;button&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;
+                &lt;a href=&quot;#&quot; id=&quot;active&quot;&gt;2&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;
+                &lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;main-nav&quot;&gt;
+        &lt;div id=&quot;nav-item&quot;&gt;
+            &lt;a href=&quot;#&quot; id=&quot;home&quot;&gt;HOME&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;PROFILE&lt;/a&gt;
+            &lt;a href=&quot;#&quot;&gt;ABOUT&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div id=&quot;content1&quot; class=&quot;item&quot;&gt;Content 1&lt;/div&gt;
+            &lt;div id=&quot;content2&quot; class=&quot;item&quot;&gt;Content 2&lt;/div&gt;
+            &lt;div id=&quot;content3&quot; class=&quot;item&quot;&gt;Content 3&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div id=&quot;content4&quot; class=&quot;item&quot;&gt;Content 4&lt;/div&gt;
+            &lt;div id=&quot;content5&quot; class=&quot;item&quot;&gt;Content 5&lt;/div&gt;
+            &lt;div id=&quot;content6&quot; class=&quot;item&quot;&gt;Content 6&lt;/div&gt;
+            &lt;div id=&quot;content7&quot; class=&quot;item&quot;&gt;Content 7&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div id=&quot;content8&quot; class=&quot;item&quot;&gt;Content 8&lt;/div&gt;
+            &lt;div id=&quot;content9&quot; class=&quot;item&quot;&gt;Content 9&lt;/div&gt;
+            &lt;div id=&quot;content10&quot; class=&quot;item&quot;&gt;Content10&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;footer&gt;© 2018 ife.baidu.com&lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a href="http://blog.venus10.com/IFE2018/Day7-Day8/IFE-layout-manuscript.html">IFE布局设计稿</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.zhihu.com/question/19915431/answer/14840690" target="_blank" rel="noopener">知乎一丝的回答</a><br>[2] <a href="http://www.baike.com/wiki/%E6%96%87%E6%A1%A3%E6%B5%81" target="_blank" rel="noopener">互动百科-文档流</a><br>[3] <a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout" target="_blank" rel="noopener">MDN定位</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.venus10.com/2018/05/04/Day7-Day8-学习布局/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//mars687.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/09/七种实现左侧固定，右侧自适应两栏布局的方法【转】/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/30/Day-5-Day-6-Three-Resumes/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mars687's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tbdyfe@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">11</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/DOM/">DOM<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DataStructure/">DataStructure<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/IFE/">IFE<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Network/">Network<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/OperatingSystem/">OperatingSystem<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ajax/">ajax<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端/">移动端<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">50</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>星辰大海
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//mars687.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            《计算机网络-自顶向下方法》第二章-应用层 | 
+        
+        星辰大海
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#330066">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #6600cc;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #330066 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #330066 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #330066 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #6600cc;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="星辰大海">
+    <meta name="msapplication-starturl" content="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/">
+    <meta name="msapplication-navbutton-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="星辰大海">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="《计算机网络-自顶向下方法》第二章-应用层 | 星辰大海">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Sun Jun 17 2018 15:10:52 GMT+0800">
+        <meta property="article:modified_time" content="Sun Aug 19 2018 11:02:28 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html",
+    "headline": "《计算机网络-自顶向下方法》第二章-应用层",
+    "datePublished": "Sun Jun 17 2018 15:10:52 GMT+0800",
+    "dateModified": "Sun Aug 19 2018 11:02:28 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Mars687",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Welcome to my world!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "星辰大海",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二章-应用层"><span class="post-toc-number">1.</span> <span class="post-toc-text">第二章 应用层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用层协议原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">应用层协议原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#网络应用程序体系结构"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">网络应用程序体系结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#进程通信"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">进程通信</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可供应用程序使用的运输服务"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">可供应用程序使用的运输服务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#因特网提供的运输服务"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">因特网提供的运输服务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用层协议"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">应用层协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web和HTTP"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Web和HTTP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTP概况"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">HTTP概况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#非持续连接和持续连接"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">非持续连接和持续连接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTP报文格式"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">HTTP报文格式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用户与服务器的交互：cookie"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">用户与服务器的交互：cookie</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Web缓存"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">Web缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件GET方法-conditional-GET"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">条件GET方法(conditional GET)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件传输协议：FTP"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件传输协议：FTP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#因特网中的电子邮件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">因特网中的电子邮件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SMTP"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">SMTP</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#与HTTP的对比"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">与HTTP的对比</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#邮件访问协议"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">邮件访问协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DNS：因特网的目录服务"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">DNS：因特网的目录服务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DNS-提供的服务"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">DNS 提供的服务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DNS-工作机理概述"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">DNS 工作机理概述</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#P2P应用"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">P2P应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#P2P文件分发"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">P2P文件分发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分布式散列表"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">分布式散列表</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 36 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                《计算机网络-自顶向下方法》第二章-应用层
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mars687</strong>
+        <span>6月 17, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《计算机网络-自顶向下方法》第二章-应用层&url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html&pic=http://blog.venus10.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《计算机网络-自顶向下方法》第二章-应用层&url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html&via=Mars687" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="第二章-应用层"><a href="#第二章-应用层" class="headerlink" title="第二章 应用层"></a>第二章 应用层</h2><h3 id="应用层协议原理"><a href="#应用层协议原理" class="headerlink" title="应用层协议原理"></a>应用层协议原理</h3><p>应用层协议只能运行在端系统，这种限制促进了应用程序的开发，即开发不用考虑底层网络核心的实现。</p>
+<h4 id="网络应用程序体系结构"><a href="#网络应用程序体系结构" class="headerlink" title="网络应用程序体系结构"></a>网络应用程序体系结构</h4><ul>
+<li>客户机-服务器体系结构（clienl-server archilecture）</li>
+</ul>
+<p>最常见的体系结构，特点是“一对多，一台服务器对应多个客户主机”，服务器主机总是打开着的，接受请求，提供响应给其他客户机主机。服务器是处理所有逻辑的中心，具有固定的 IP 地址。客户机之间不直接通信，要通信必须经过服务器。<br>基础设施密集。虽然客户机/服务器体系结构的特征是“一对多”，但是服务器却并不总是一台，因为有的时候要处理海量的客户机的请求， 一台服务器很快就会不堪重负，所以这个时候常用服务器集群技术（server clustering）创建强大的虚拟服务器。</p>
+<p>应用程序：WEB，FTP，电子邮件，Telnet</p>
+<ul>
+<li>P2P体系结构（P2 P architecture）</li>
+</ul>
+<p>应用程序在间断的主机对之间进行直接通信，这些主机对被称为对等方。</p>
+<p>特点：客户机间的直接通信使得P2P有了强大的自扩展性（self-calability），比如下载文件时接收到文件的主机又可以直接把文件上载给其他的主机，因此对基础设施服务器依赖较小，并且可上载该文件的主机的数量是指数递增的，系统的服务能力只会越来越强。</p>
+<p>应用程序：文件共享(例如BitTorrenl) 、对等方协助下载加速器(例如迅雷)、因特网电话(例如Skype) 和IPTV (例如”迅雷看看”和PPstream) 。</p>
+<h4 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h4><ul>
+<li>客户和服务器进程</li>
+</ul>
+<p>网络应用程序由成对的进程组成，在两个不同端系统上的进程，通过跨越计算机网络交换报文（message）。通常将两个进程之一标识为客户，另一个标识为服务器。在给定的一对进程之间的通信会话场景中，发起通信的进程被标识为客户，在会话开始时等待联系的进程是服务器。</p>
+<ul>
+<li>进程与计算机网络之间的接口</li>
+</ul>
+<p>进程通过一个称为套接字(socket)的软件接口向网络发送报文和从网络接收报文。套接字类似每个人房间门前的信箱，发送端应用程序将报文放进套接字这一端，在套接字另一端，运输层协议（TCP/UDP）负责使该报文进入接收进程的套接字（将报文放到另一个人房间门前的信箱）。套接字也被称为应用程序和网络之间的应用程序编程接口（API）。程序开发者可以控制套接字在应用层端的一切，但是对该套接字的运输层端几乎没有控制权，应用程序开发者对于运输层的控制仅限于:<br>①选择运输层协议;<br>②也许能设定几个运输层参数，如最大缓存和最大报文段长度等(将在第3 章中涉及) 。</p>
+<p>一旦应用程序开发者选择了一个运输层协议(如果可供选择的话) ，则应用程序就建立在由该协议提供的运输层服务之上。</p>
+<ul>
+<li>进程寻址</li>
+</ul>
+<p>一台主机的进程向另一台主机的进程发送分组，接收进程需要一个地址。为了标识该进程，需要定义两种信息： </p>
+<p>①主机的地址：用IP地址标识；<br>②定义在目标主机中的接收进程的标识符：用目的地端口号标识。</p>
+<h4 id="可供应用程序使用的运输服务"><a href="#可供应用程序使用的运输服务" class="headerlink" title="可供应用程序使用的运输服务"></a>可供应用程序使用的运输服务</h4><p>根据运输层协议为应用层程序提供的服务，按下列要求进行分类：</p>
+<ul>
+<li>可靠数据传输( reliable data transfer)：是否容忍数据丢失。</li>
+<li>吞吐量 ：应用程序是否对吞吐量有特定的要求，若是，则称为带宽敏感的应用，否则称为弹性应用。</li>
+<li>定时：对时延的要求。</li>
+<li>安全性</li>
+</ul>
+<h4 id="因特网提供的运输服务"><a href="#因特网提供的运输服务" class="headerlink" title="因特网提供的运输服务"></a>因特网提供的运输服务</h4><ul>
+<li>TCP 服务</li>
+</ul>
+<ol>
+<li>面向连接的服务：在应用层数据报文开始流动之前，TCP让客户和服务器互相交换运输层控制信息，即握手阶段。之后，一条全双工的TCP连接就在两个进程的套接字之间建立了。应用程序结束发送报文时，则拆除该连接。</li>
+</ol>
+<blockquote>
+<p>单工，全双工与半双工的含义及区别？</p>
+<ul>
+<li>单工数据传输只支持数据在一个方向上传输；</li>
+<li>半双工数据传输允许数据在两个方向上传输，但是，在某一时刻，只允许数据在一个方向上传输，它实际上是一种切换方向的单工通信；</li>
+<li>全双工数据通信允许数据同时在两个方向上传输，因此，全双工通信是两个单工通信方式的结合，它要求发送设备和接收设备都有独立的接收和发送能力。<br>网卡的全双工（Full Duplex）是指网卡在发送数据的同时也能够接收数据，两者同步进行，这好像我们平时打电话一样，说话的同时也能够听到对方的声音。目前的网卡一般都支持全双工。<br>提到全双工，就不能不提与之密切对应的另一个概念，那就是“半双工（Half Duplex）”，所谓半双工就是指一个时间段内只有一个动作发生，举个简单例子，一条窄窄的马路，同时只能有一辆车通过，当目前有两量车对开，这种情况下就只能一辆先过，等到头儿后另一辆再开，这个例子就形象的说明了半双工的原理。早期的对讲机、以及早期集线器等设备都是基于半双工的产品。随着技术的不断进步，半双工会逐渐退出历史舞台。<br>全双工以太网使用两对电缆线，而不是像半双工方式那样使用一对电缆线。全双工方式在发送设备的发送方和接收设备的接收方之间采取点到点的连接，这意味着在全双工的传送方式下，可以得到更高的数据传输速度。</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li>可靠的数据传送服务：通信进程能够依靠TCP，无差错、按适当顺序交付所有发送的数据。</li>
+</ol>
+<p>TCP 协议还具有拥塞控制机制：<br>当发送方和接收方之间的网络出现拥塞时，TCP 的拥塞控制机制会抑制发送进程。</p>
+<p>TCP 拥塞控制机制也试图限制每个 TCP 连接，使他们达到公平共享网络带宽的目的。这种服务不一定为通信进程带来直接好处，但是能为因特网带来整体好处。</p>
+<ul>
+<li>UDP 服务</li>
+</ul>
+<ol>
+<li><p>UDP 是一种不提供不必要服务的轻量级运输协议，它仅提供最小服务。</p>
+</li>
+<li><p>UDP 是无连接的，因此在两个进程通信之前无握手。</p>
+</li>
+<li><p>UDP 协议提供一种不可靠数据传送服务，也就是说，当进程将一个报文发送进 UDP 套接字时，UDP并不保证该报文到达接收进程。不仅如此，到达接收进程的报文也可能是乱序到达的。</p>
+</li>
+</ol>
+<p>UDP 没有包括拥塞控制机制，所以 UDP 的发送端可以用它选定的任何速率向其下层（网络层）注入数据。</p>
+<ul>
+<li>因特网运输协议所不提供的服务</li>
+</ul>
+<p>TCP 能提供可靠的数据传输服务，也能通过 SSL 来加强以提供安全服务。<br>今天的因特网通常能够为时间敏感应用提供满意的服务，但不能提供任何定时或带宽保证。</p>
+<h4 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h4><p>应用层协议定义了运行在不同端系统上的进程如何相互传递报文。特别是应用层协议定义了:</p>
+<ul>
+<li>交换报文的类型，例如请求报文和响应报文。</li>
+<li>各种报文类型的语法，如报文中各个字段及这些字段是如何描述的。</li>
+<li>字段的语义，即这些字段中包含的信息的含义。</li>
+<li>一个进程何时以及如何发送报文，对报文进行响应的规划。</li>
+</ul>
+<div align="center"><br><img src="http://i64.tinypic.com/ru8b5i.jpg" alt="chapter2-applicationLayerProtocals"><br></div><br><div align="center"><font size="2">互联网应用，应用层协议和下层传输协议</font></div>
+
+<h3 id="Web和HTTP"><a href="#Web和HTTP" class="headerlink" title="Web和HTTP"></a>Web和HTTP</h3><h4 id="HTTP概况"><a href="#HTTP概况" class="headerlink" title="HTTP概况"></a>HTTP概况</h4><ul>
+<li><p>Web 的应用层协议是 超文本传输协议（HTTP） ，它是 Web 的核心。</p>
+</li>
+<li><p>HTTP 由两个程序实现：一个客户程序和一个服务器程序。客户程序和服务器程序运行在不同的端系统中，通过交换 HTTP 报文进行会话。</p>
+</li>
+<li><p>HTTP 使用 TCP 作为它的支撑运输协议。客户首先发起一个与服务器的 TCP 连接。一旦该连接建立，该浏览器和服务器进程就可以通过套接字接口访问 TCP。</p>
+</li>
+<li><p>HTTP 是一个 无状态协议 。服务器向客户发送被请求的文件，而 不存储 任何该客户的状态信息。</p>
+</li>
+</ul>
+<p>Web 使用了 客户-服务器 应用程序体系结构。</p>
+<h4 id="非持续连接和持续连接"><a href="#非持续连接和持续连接" class="headerlink" title="非持续连接和持续连接"></a>非持续连接和持续连接</h4><ul>
+<li>非持续连接(non-persistent connection)</li>
+</ul>
+<p>应用程序在采用非持续连接的情况下，客户的每个请求都要建立一个单独的 TCP 连接。<br>简单估算一下从客户请求 HTML 文件到客户收到文件为止所花费的时间。</p>
+<p>往返时间(Round-Trip Time , RTT)：一个短分组从客户到服务器然后再返回客户所花费的时间。</p>
+<div align="center"><br><img src="http://i68.tinypic.com/4l0pvl.jpg" alt="chapter2-RTT"><br></div><br><div align="center"><font size="2">请求并接收一个HTML 文件所需的时间估算</font></div>
+
+<p>因此，粗略的讲，总的响应时间就是两个 RTT 加上服务器传输 HTML 文件的时间。</p>
+<ul>
+<li>持续连接(persistent connection)</li>
+</ul>
+<p>在采用持续连接的情况下，服务器再发送响应后保持该 TCP 连接打开。在相同的客户与服务器之间的后续请求和响应报文能够通过相同的连接进行传送。</p>
+<p>一般来说，如果一条连接经过一定的时间间隔（一个可配置的时间间隔）仍未被使用，HTTP 服务器就关闭该连接。HTTP 的默认模式是使用带流水线的持续连接。</p>
+<h4 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h4><ul>
+<li>HTTP 请求报文</li>
+</ul>
+<pre><code class="html">GET /somedir/page.html HTTP/1.1
+Host: www.someschool.edu
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+</code></pre>
+<p>第一行叫做 请求行(request line) ，其后继的行叫做 首部行(header line)。 </p>
+<p>请求行有三个字段：<br>1.方法字段：包括 GET、POST、HEAD、PUT 和 DELETE。绝大部分报文使用 GET 方法。<br>2.URL 字段<br>3.HTTP 版本字段</p>
+<div align="center"><br><img src="http://i65.tinypic.com/2gsfotc.jpg" alt="chapter2-requestMessage"><br></div><br><div align="center"><font size="2">请求报文的通用格式</font></div>
+
+<ul>
+<li>HTTP响应报文</li>
+</ul>
+<p>对刚才的请求报文的响应报文：</p>
+<pre><code class="html">HTTP/1.1 200 OK
+Connection: close
+Date: Tue, 09 Aug 2011 15:44:04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 09 Aug 2011 15:11:03 GMT
+Content-Length: 6821
+Content-Type: text/html
+
+(data data data data data ......)
+</code></pre>
+<p>响应报文分为三个部分：<br>1.初始状态行(status line)<br>状态行有三个字段：版本协议字段、状态码和相应状态信息。<br>2.6个首部行<br>3.实体主体<br>实体体部分是报文的主要部分，即它包含了所请求的对象本身(表示为dala dala data data . . . ) 。</p>
+<p>下表包括了一些常用的状态码和相关短语</p>
+<ul>
+<li>200 OK 请求成功，信息在返回的响应报文中。</li>
+<li>301 Moved Permanetly 请求的对象已经被永久转移了，新的 URL 定义在相应报文的 Location：首部行中。客户软件将自动获取新的 URL。</li>
+<li>400 Bad Request 一个通用差错代码，指示该请求不能被服务器理解。</li>
+<li>404 Not Found 请求的文档不在服务器上。</li>
+<li>505 HTTP Version Not Supported 服务器不支持请求报文使用的 HTTP 协议版本。</li>
+</ul>
+<div align="center"><br><img src="http://i64.tinypic.com/erlvz4.jpg" alt="chapter2-responseMessage"><br></div><br><div align="center"><font size="2">响应报文的通用格式</font></div>
+
+<h4 id="用户与服务器的交互：cookie"><a href="#用户与服务器的交互：cookie" class="headerlink" title="用户与服务器的交互：cookie"></a>用户与服务器的交互：cookie</h4><p>HTTP 是无状态的，但是 Web 站点通常希望能够识别用户，为此，HTTP 使用了 cookie ，它允许站点对用户进行跟踪。</p>
+<p>cookie 有 4 个技术组件：<br>1.在 HTTP 响应报文中的一个 cookie 首部行；<br>2.在 HTTP 请求报文中的一个 cookie 首部行；<br>3.在用户端系统中保留有一个 cookie 文件，并由用户的浏览器进行管理；<br>4.位于 Web 站点的一个后端数据库。</p>
+<div align="center"><br><img src="http://i63.tinypic.com/ao50ma.jpg" alt="chapter2-cookie"><br></div><br><div align="center">cookie 跟踪用户状态</div>
+
+<p>在web站点后台有数据库。其工作原理是，用户第一次访问某服务器时，其响应报文中包含一个Set-cookie字段，该字段的值往往是服务器设定的唯一标识码，浏览器将该字段和服务器主机名等信息保存在本地，以后用户每次访问时，浏览器都会从cookies中找到该站点的标识码放在请求报文中发送，这样服务器就能通过这个唯一标识辨认这个用户，通过用户在网站上的浏览记录采取行为。</p>
+<h4 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h4><p>Web 缓存器(Web cache)也叫代理服务器(proxy server)，是能够代表 Web 服务器来满足 HTTP 请求的网络实体。Web 服务器有自己的磁盘存储空间，并在存储空间中保存着最近存储过的对象的副本。可以配置用户的浏览器，使得用户所有的 HTTP 请求首先指向 Web 缓存器。客户与 Web 缓存器之间的速度通常比较快，所以可以提高访问的速度，降低时延。</p>
+<p>当浏览器申请一个文件时，先建立一个到web缓存的TCP连接，如果缓存服务器上有这个文件就返回，否则，他就建立一个到原始服务器的TCP获得该文件并存储，之后将该文件发回客户端。web缓存可以大幅减少对客户端的响应时间，减少机构内部网络和internet之间的链路通信量并节约带宽。这样会带来的新的问题是，web缓存上的文件可能是陈旧的。为此HTTP引入了条件get，即web缓存在保存一个文件时会记录其最后修改时间，客户端每次请求文件时，web缓存会向原始服务器发送一个带有if-modified-since的报文，如果该文件没有改动就直接把缓存中的文件返回给用户，否则重新下载该文件。</p>
+<p>通过使用内容分发网络(Content Distribution Network, CDN) , Web 缓存器正在因特网中发挥着越来越重要的作用。CDN 公司在因特网上安装了许多地理上分散的缓存器，因而使大量流量实现了本地化。有多个共享的CDN (例如Akamai 和Limelight)和专用的CDN (例如谷歌和微软)。</p>
+<h4 id="条件GET方法-conditional-GET"><a href="#条件GET方法-conditional-GET" class="headerlink" title="条件GET方法(conditional GET)"></a>条件GET方法(conditional GET)</h4><p>用来解决 Web 缓存器中的对象拷贝可能是陈旧的的问题。</p>
+<p>若同时满足以下两点的则称为 条件 GET 方法：</p>
+<ul>
+<li><p>请求报文使用 GET 方法。</p>
+</li>
+<li><p>请求报文中包含一个 If-Modified-Since: 首部行。</p>
+</li>
+</ul>
+<h3 id="文件传输协议：FTP"><a href="#文件传输协议：FTP" class="headerlink" title="文件传输协议：FTP"></a>文件传输协议：FTP</h3><p>用两个并行TCP连接，一个控制连接，一个是数据连接。</p>
+<p>如图，用户通过一个FTP用户代理与FTP交互。该用户首先提供远程主机的主机名，使本地主机的FTP客户进程建立一个到远程主机FTP服务器进程的TCP 连接。该用户接着提供用户标识和口令，作为FTP 命令的一部分在该TCP连接上传送。一旦该服务器向该用户授权，用户可以将存放在本地文件系统中的一个或者多个文件复制到远程文件系统(反之亦然)。</p>
+<div align="center"><br><img src="http://i67.tinypic.com/14v7fbb.jpg" alt="chapter2-FTP"><br></div><br><div align="center">使用FTP 协议在本地和远程文件系统之间移动文件</div>
+
+<p>HTTP 和FTP 都是文件传输协议，并且有很多共同的特点，例如，它们都运行在TCP上 。然而，这两个应用层协议也有一些重要的区别。其中最显著的就是ITP 使用了两个并行的TCP 连接来传输文件， 一个是控制连接(control connection) ，一个是数据连接(data connection) 。控制连接用于在两主机之间传输控制信息，如用户标识、口令、改变远程目录的命令以及”存放(put)”和”获取(get)”文件的命令。数据连接用于实际发送一个文件。因为 FTP 协议使用一个独立的控制连接，所以我们也称FTP的控制信息是带外(out-of-band) 传送的。如你所知， HTTP 协议是在传输文件的同一个TCP 连接中发送请求和响应首部行的。因此， HTTP 也可以说是带内(in-band) 发送控制信息的。FTP协议的控制连接和数据连接如下图所示。</p>
+<div align="center"><br><img src="http://i66.tinypic.com/sdmusy.jpg" alt="chapter2-FTP-connection"><br></div><br><div align="center">FTP 协议控制连接和数据连接</div>
+
+<p>当用户主机与远程主机开始一个FTP会话时，FTP的客户(用户)端首先在服务器21 号端口与服务器(远程主机)端发起一个用于控制的TCP 连接。FTP的客户端也通过该控制连接发送用户的标识和口令，发送改变远程目录的命令。当FTP 的服务器端从该连接上收到一个文件传输的命令后(无论是向还是来自远程主机) ，就发起一个到客户端的TCP 数据连接。FTP 在该数据连接上准确地传送一个文件，然后关闭该连接。在同一个会话期间，如果用户还需要传输另一个文件，FTP 则打开另一个数据连接。因而对FTP传输而言，控制连接贯穿了整个用户会话期间，但是对会话中的每一次文件传输都需要建立一个新的数据连接(即数据连接是非持续的)。</p>
+<p>FTP 服务器必须在整个会话期间保留用户的状态(state) 。特别是，服务器必须把特定的用户账户与控制连接联系起来，随着用户在远程目录树上徘徊，服务器必须追踪用户在远程目录树上的当前位置。对每个进行中的用户会话的状态信息进行追踪，大大限制了FTP同时维持的会话总数。而另一方面，前面讲过HTTP 是无状态的，即它不必对任何用户状态进行追踪。</p>
+<h3 id="因特网中的电子邮件"><a href="#因特网中的电子邮件" class="headerlink" title="因特网中的电子邮件"></a>因特网中的电子邮件</h3><p>电子邮件系统有3个主要组成部分：<br>1.用户代理<br>2.邮件服务器<br>3.简单邮件传输协议（SMTP） </p>
+<div align="center"><br><img src="http://i63.tinypic.com/k2q9e.jpg" alt="chapter2-SMTP-connection"><br></div><br><div align="center">因特网电子邮件系统的总体描述</div>
+
+<h4 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h4><p>SMTP 是因特网中电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输。SMTP 限制所有的邮件报文只能采用简单的 7 比特 ASCII 表示。<br>一个简单的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器，再传输到接收方的邮件服务器，然后在这里被分发到接收方的邮箱上。</p>
+<p>为了描述SMTP的基本操作.我们观察一种常见的情景。假设Alice 想给Bob 发送一封简单的ASCII报文。</p>
+<ul>
+<li><p>Alice 调用她的邮件代理程序并提供Bob的邮件地址(例如<a href="mailto:bob@someschool.edu" target="_blank" rel="noopener">bob@someschool.edu</a>),撰写报文，然后指示用户代理发送该报文。</p>
+</li>
+<li><p>Alice 的用户代理把报文发给她的邮件服务器，在那里该报文被放在报文队列中。</p>
+</li>
+<li><p>运行在Alice 的邮件服务器上的SMTP 客户端发现了报文队列中的这个报文，它就创建一个到运行在Bob 的邮件服务器上的SMTP 服务器的TCP 连接。</p>
+</li>
+<li><p>在经过一些初始SMTP 握手后， SMTP 客户通过该TCP 连接发送Alice 的报文。</p>
+</li>
+<li><p>在Bob 的邮件服务器上， SMTP 的服务器端接收该报文。Bob 的邮件服务器然后将该报文放人Bob 的邮箱中。</p>
+</li>
+<li><p>在Bob 方便的时候，他调用用户代理阅读该报文。如下图。 </p>
+</li>
+</ul>
+<div align="center"><br><img src="http://i68.tinypic.com/w1tik5.jpg" alt="chapter2-SMTP-sendingMessage"><br></div><br><div align="center">Alice 向Bob 发送一条报文</div>
+
+<p>如果 Bob 的邮件服务器没有开机，该报文会保留在 Alice 的邮件服务器上并尝试进行新的尝试。这意味着邮件并不会在中间的某个邮件服务器存留。</p>
+<blockquote>
+<p>注意：SMTP 一般不使用中间服务器发送邮件，即使这两个邮件服务器位于地球的两端也一样。</p>
+</blockquote>
+<p>SMTP 用的是持续链接：如果发送邮件服务器有几个报文发往同一个接收邮件服务器，它可以通过同一个 TCP 连接发送所有的的报文。</p>
+<h4 id="与HTTP的对比"><a href="#与HTTP的对比" class="headerlink" title="与HTTP的对比"></a>与HTTP的对比</h4><ul>
+<li>相同点：</li>
+</ul>
+<p>都用于从一台主机向另一台主机传送文件。HTTP 从Web 服务器向Web 客户(通常是一个浏览器)传送文件(也称为对<br>象); SMTP 从一个邮件服务器向另一个邮件服务器传送文件(即电子邮件报文) 。当进行文件传送时，持续的HTTP 和SMTP 都使用持续连接。</p>
+<ul>
+<li>不同点：</li>
+</ul>
+<ol>
+<li><p>HTTP 是一个 拉协议(pull protocol)，TCP 连接是由想要接收文件的机器发起的。SMTP 是一个 推协议(push protocol)，TCP连接是由想要发送文件的机器发起的。</p>
+</li>
+<li><p>SMTP 要求报文必须按照 7 比特 ASCII 码进行编码。HTTP 则没有这种限制。</p>
+</li>
+<li><p>在处理包含多种不同类型的文档时。HTTP 把每个对象封装到它自己的 HTTP 响应报文中，SMTP 则把所有报文对象放在一个报文中。</p>
+</li>
+</ol>
+<p>因为SMTP要求所有对象用ASCII编码，对于图片、视频或者非ASCII字符，就要使用多用途Internet 邮件扩展（MIME）对其添加支持。需要在报文的首部中添加Content-Type和Content-Transfer-Encoding。SMTP的接收方在受到报文后，会在该报文中添加一个Received行表示接受信息。</p>
+<h4 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h4><ul>
+<li><p>第三版的邮局协议(POSl Office Protocol-Version 3 ,POP3)</p>
+</li>
+<li><p>因特网邮件访问协议(Intemet Mail Access Protocol , IMAP)</p>
+</li>
+<li><p>基于 Web 的电子邮件(HTTP)</p>
+</li>
+</ul>
+<p>下面考虑邮件如何从接收方的服务器到达接收方主机上的用户代理，也就是邮件访问协议。当用户代理打开一个到邮件服务器的110端口的TCP后，POP3就开始工作了。<br>第一阶段：特许阶段，，用户代理发送(以明文形式)用户名和口令以鉴别用户。<br>第二阶段：事务处理阶段，用户代理取回报文;同时在这个阶段用户代理还能进行如下操作，对报文做删除标记，取消报文删除标记，以及获取邮件的统计信息。<br>第三阶段：更新阶段，它出现在客户发出了quÏl命令之后，目的是结束该POP3会话;这时，该邮件服务器<br>删除那些被标记为删除的报文。</p>
+<h3 id="DNS：因特网的目录服务"><a href="#DNS：因特网的目录服务" class="headerlink" title="DNS：因特网的目录服务"></a>DNS：因特网的目录服务</h3><p>因特网上的主机的标识有2种方式：</p>
+<ul>
+<li>主机名，如<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></li>
+<li>IP地址，如xxx.xxx.xxx.xxx</li>
+</ul>
+<h4 id="DNS-提供的服务"><a href="#DNS-提供的服务" class="headerlink" title="DNS 提供的服务"></a>DNS 提供的服务</h4><p>主机可以使用 主机名 和 IP 地址 进行标识。为进行主机名到IP地址转换的目录服务，引入了域名系统<br>(Domain Name System , DNS)。</p>
+<p>DNS 即 域名系统 是：</p>
+<ul>
+<li>一个由分层的 DNS 服务器 实现的分布式数据库。</li>
+<li>一个使得主机能够查询分布式数据库的应用层协议。</li>
+</ul>
+<p>DNS也是应用层协议，它通常会被其他应用层协议所使用，包括HTTP、SMTP和FTP，将用户的主机名解析为 IP 地址。<br>DNS 还提供了一些重要的服务：</p>
+<ul>
+<li>识别主机别名(host aliasing),用于HTTP、FTP。</li>
+<li>识别邮件服务器别名(mai] server aliasing)用于SMTP。</li>
+<li>负载分配(load distribution)</li>
+</ul>
+<h4 id="DNS-工作机理概述"><a href="#DNS-工作机理概述" class="headerlink" title="DNS 工作机理概述"></a>DNS 工作机理概述</h4><p>假设运行在用户主机上的某些应用程序(如Web 浏览器或邮件阅读器)需要将主机名转换为IP 地址。这些应用程序将调用DNS 的客户端，并指明需要被转换的主机名(在很多基于UNIX 的机器上，应用程序为了执行这种转换需要调用函数gethoslbyname())。用户主机上的DNS 接收到后，向网络中发送一个DNS 查询报文。所有的DNS 请求和回答报文使用UDP 数据报经端口53 发送。经过若干毫秒到若干秒的时延后，用户主机上的DNS 接收到一个提供所希望映射的DNS 回答报文。这个映射结果则被传递到调用DNS 的应用程序。因此，从用户主机上调用应用程序的角度看， DNS 是一个提供简单、直接的转换服务的黑盒子。但事实上，实现这个服务的黑盒子非常复杂，它由分布于全球的大量DNS 服务器以及定义了DNS 服务器与查询主机通信方式的应用层协议组成。</p>
+<p><strong>集中式DNS设计方案</strong></p>
+<p>DNS 的一种简单设计是在因特网上只使用一个DNS 服务器，该服务器包含所有的映射。在这种集中式设计中，客户直接将所有查询直接发往单一的DNS 服务器，同时该DNS 服务器直接对所有的查询客户做出响应。尽管这种设计的简单性非常具有吸引力，但它不适用于当今的因特网，因为因特网有着数量巨大(并持续增长)的主机。这种集中式设计的问题包括:</p>
+<ul>
+<li>单点故障(a single point of failure) 。如果该DNS 服务器崩溃，整个因特网随之瘫痪!</li>
+<li>通信容量(traffic volume)。单个DNS 服务器不得不处理所有的DNS 查询(用于为上亿台主机产生的所有HTTP 请求报文和电子邮件报文服务)。</li>
+<li>远距离的集中式数据库(distant centralized database) 。单个DNS 服务器不可能”邻近”所有查询客户。如果我们将单台DNS 服务器放在纽约市，那么所有来自澳大利亚的查询必须传播到地球的另一边，中间也许还要经过低速和拥塞的链路。这将导致严重的时延。</li>
+<li>维护(maintenance)。单个DNS 服务器将不得不为所有的因特网主机保留记录。这不仅将使这个中央数据库非常庞大，而且它还不得不为解决每个新添加的主机而频繁更新。</li>
+</ul>
+<p>总的来说，在单一DNS 服务器上运行集中式数据库完全没有可扩展能力。因此， DNS采用了分布式的设计方案。事实上， DNS 是一个在因特网上实现分布式数据库的精彩范例。</p>
+<p><strong>分布式DNS设计方案</strong></p>
+<p>为了处理扩展性问题， DNS 使用了大量的DNS 服务器，它们以层次方式组织，并且分布在全世界范围内。没有一台DNS 服务器拥有因特网上所有主机的映射。相反，该映射分布在所有的DNS 服务器上。大致说来，有3 种类型的DNS 服务器:根DNS 服务器、顶级域(Top-Level Domain, TLD) DNS 服务器和权威DNS 服务器。这些服务器以下图中所示的层次结构组织起来。</p>
+<div align="center"><br><img src="http://i67.tinypic.com/i3w5qd.jpg" alt="chapter2-DNS"><br></div><br><div align="center">DNS 服务器的部分层次结构</div>
+
+<p>为了理解这3种类型的DNS 服务器交互的方式，假定一个DNS 客户要决定主机名附 <a href="http://www.amazon.com" target="_blank" rel="noopener">www.amazon.com</a> 的IP地址。粗略说来，将发生下列事件。客户首先与根服务器之一联系，它将返回顶级域名com 的TLD 服务器的IP地址。该客户则与这些TLD服务器之一联系，它将为 amazoo.com 返回权威服务器的IP 地址。最后，该客户与 amazon.com 权威服务器之一联系，它为主机名为 <a href="http://www.amazon.com" target="_blank" rel="noopener">www.amazon.com</a> 返回其IP地址。我们将很快更为详细地考察DNS 查找过程。不过我们先仔细看一下这3种类型的 DNS 服务器。</p>
+<ul>
+<li><p>根 DNS 服务器<br>在因特网上有13个根DNS 服务器(标号为A到M) ，它们中的大部分位于北美洲。</p>
+</li>
+<li><p>顶级域（DNS）服务器<br>这些服务器负责顶级域名如com 、org 、net 、edu 和gov, 以及所有国家的顶级域名如此、fr ， ca 和jp o Verisign Global Regislry Services 公司维护com 顶级域的TLD 服务器; Educause 公司维护edu 顶级域的TLD 服务器。</p>
+</li>
+<li><p>权威DNS服务器<br>在因特网上具有公共可访问主机(如Web 服务器和邮件服务器)的每个组织机构必须提供公共可访问的DNS 记录，这些记录将这些主机的名字映射为IP 地址。一个组织机构的权威DNS 服务器收藏了这些DNS 记录。一个组织机构能够选择实现它自己的权威DNS 服务器以保存这些记录;另一种方法是，该组织能够支付费用，让这些记录存储在某个服务提供商的一个权威DNS 服务器中。</p>
+</li>
+</ul>
+<p><strong>DNS缓存</strong></p>
+<p>与Web缓存器一样，DNS服务器同样有缓存器。为了改善时延性能并减少在因特网上到处传输的DNS 报文数量，DNS 广泛使用了缓存技术。DNS 缓存的原理非常简单。在一个请求链中，当某DNS服务器接收一个DNS 回答(例如，包含主机名到IP 地址的映射)时，它能将该回答中的信息缓存在本地存储器中。</p>
+<h3 id="P2P应用"><a href="#P2P应用" class="headerlink" title="P2P应用"></a>P2P应用</h3><h4 id="P2P文件分发"><a href="#P2P文件分发" class="headerlink" title="P2P文件分发"></a>P2P文件分发</h4><ol>
+<li>P2P 体系结构的扩展性</li>
+</ol>
+<p>为了将客户-服务器体系结构与 P2P 体系结构进行比较，阐述 P2P 的内在自扩展性，我们现在考虑一个用于两种体系结构类型的简单定量模型，将一个文件分发给一个固定集合。如图所示，服务器和对等方使用接入链路与因特网相连。其中u<sub>s</sub> 表示服务器接人链路的上载速率， u<sub>i</sub> 表示第i对等方接入链路的上载速率，d<sub>i</sub> 表示了第i对等方接入链路的下载速率。还用 F 表示被分发的文件长度(以比特计)， N 表示要获得的该文件副本的对等方的数量。分发时间(dislribution time) 是所有N 个对等方得到该文件的副本所需要的时间。</p>
+<p>我们首先来确定对于客户一服务器体系结构的分发时间，我们将其表示为D<sub>cs</sub>。在客户-服务器体系结构中，没有对等方参与来帮助分发文件。我们做下列观察:</p>
+<ul>
+<li><p>服务器必须向 N 个对等方的每个传输该文件的一个副本。因此该服务器必须传输 NF 比特。因为该服务器的上载速率是u<sub>s</sub> ， 分发该文件的时间必定是至少为 NF/u<sub>s</sub>。</p>
+</li>
+<li><p>令d<sub>min</sub>表示具有最小下载速率的对等方的下载速率，即d<sub>min</sub>= min {d<sub>1</sub>，d<sub>2</sub>, …, d<sub>N</sub>} 。具有最小下载速率的对等方不可能在少于F/d<sub>min</sub> 秒时间内获得该文件的所有 F 比特。因此最小分发时间至少为F/d<sub>min</sub>。</p>
+</li>
+</ul>
+<p>将这两个观察放在一起，我们得到：</p>
+<div align="center"><br><img src="http://i67.tinypic.com/2iblrlu.jpg" alt="chapter2-DNS-formu1"><br></div>
+
+<p>我们现在来对P2P 体系结构进行简单的分析，其中每个对等方能够帮助服务器分发该文件。特别是，当一个对等方接收到某些文件数据，它能够使用自己的上载能力重新将数据分发给其他对等方。计算P2P 体系结构的分发时间在某种程度上比计算客户-服务器体系结构的更为复杂，因为分发时间取决于每个对等方如何向其他对等方分发该文件的各个部分。我们做下列观察：</p>
+<ul>
+<li>在分发的开始，只有服务器具有文件。为了使社区的这些对等方得到该文件，该服务器必须经其接入链路至少发送该文件的每个比特一次。因此，最小分发时间至少是F/u<sub>s</sub>。(与客户-服务器方案不同，由服务器发送过一次的比特可能不必由该服务器再次发送，因为对等方在它们之间可以重新分发这些比特。)</li>
+<li>与客户-服务器体系结构相同，具有最低下载速率的对等方不能够以小于F/d<sub>min</sub>秒的分发时间获得所有F 比特。因此最小分发时间至少为F/d<sub>min</sub>。</li>
+<li>最后，观察到系统整体的总上载能力等于服务器的上载速率加上每个单独的对等方的上载速率， 即u<sub>total</sub> = u<sub>1</sub>，u<sub>2</sub>, …, u<sub>N</sub>。系统必须向这N个对等方的每一个上载 F 比特，因此总共上载 NF 比特。这不能以快于u<sub>total</sub>的速率完成。因此，最小的分发时间也至少是NF/u<sub>1</sub>，u<sub>2</sub>, …, u<sub>N</sub>。</li>
+</ul>
+<p>将这三个观察放在一起，我们获得了对自P 的最小分发时间，表示为D<sub>P2P</sub>:</p>
+<div align="center"><br><img src="http://i66.tinypic.com/nmdg94.jpg" alt="chapter2-DNS-formu2"><br></div>
+
+<p>我们从下图中看到，对于客户-服务器体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于P2P 体系结构，最小分发时间不仅总是小于客户-服务器体系结构的分发时间，而且对于任意的对等方数量N， 总是小于1小时。因此，具有P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是:对等方除了是比特的消费者外,还是它们的重新分发者。</p>
+<div align="center"><br><img src="http://i64.tinypic.com/dc518w.jpg" alt="chapter2-"><br></div>
+
+<ol start="2">
+<li>BitTorrent</li>
+</ol>
+<p>BitTorrent 是一种用于文件分发的流行P2P 协议。用BitTorrent 的术语来讲，参与一个特定文件分发的所有对等方的集合被称为一个洪流(torrent) 。在一个洪流中的对等方彼此下载等长度的文件块(chunk) ，典型的块长度为256KB。当一个对等方首次加入一个洪流时，它没有块。随着时间的流逝，它累积了越来越多的块。当它下载块时，也为其他对等方上载了多个块。一且某对等方获得了整个文件，它也许(自私地)离开洪流，或(大公无私地)留在该洪流中并继续向其他对等方上载块。同时，任何对等方可能在任何时候仅具有块的子集就离开该洪流，并在以后重新加人该洪流中。</p>
+<h4 id="分布式散列表"><a href="#分布式散列表" class="headerlink" title="分布式散列表"></a>分布式散列表</h4><p>分布式散列表（Distributed Hash Table，DHT）是分布式计算系统中的一类，用来将一个关键值（key）的集合分散到所有在分布式系统中的节点，并且可以有效地将消息转送到唯一一个拥有查询者提供的关键值的节点（Peers）。这里的节点类似散列表中的存储位置。分布式散列表通常是为了拥有极大节点数量的系统，而且在系统的节点常常会加入或离开（例如网络断线）而设计的。在一个结构性的延展网络（overlay network）中，参加的节点需要与系统中一小部份的节点沟通，这也需要使用分布式散列表。分布式散列表可以用以创建更复杂的服务，例如分布式文件系统、点对点技术文件分享系统、合作的网页高速缓存、多播、任播、域名系统以及实时通信等。</p>
+<ul>
+<li>考虑用网覆盖拓扑DHT（即每个节点跟踪系统中的所有节点）。这种设计的优点和缺点是什么？一个环形的DHT（没有捷径）的优点和缺点是什么？</li>
+</ul>
+<p>Mesh DHT: 优势在于为了路由一条信息到接近关键值（key）的对等方，只需要跳跃(hop)一次。缺点是每个对等方都必须朱总所有其他在DHT中的对等方。</p>
+<p>Circular DHT：优势在于每个对等方只需追踪几个其他对等方，而缺点是为了路由一条信息到接近关键值（key）的对等方需要O(N)次跳跃。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.venus10.com/2018/06/17/《计算机网络-自顶向下方法》第二章-应用层/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//mars687.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/06/17/《计算机网络-自顶向下方法》第三章-传输层/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/13/《计算机网络-自顶向下方法》第一章-计算机网络和因特网/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mars687's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tbdyfe@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">11</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/DOM/">DOM<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DataStructure/">DataStructure<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/IFE/">IFE<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Network/">Network<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/OperatingSystem/">OperatingSystem<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ajax/">ajax<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端/">移动端<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">50</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>星辰大海
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//mars687.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

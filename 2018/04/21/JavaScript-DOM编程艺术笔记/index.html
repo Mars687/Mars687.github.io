@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            JavaScript DOM编程艺术笔记 | 
+        
+        星辰大海
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#330066">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #6600cc;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #330066 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #330066 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #330066 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #6600cc;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="星辰大海">
+    <meta name="msapplication-starturl" content="http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/">
+    <meta name="msapplication-navbutton-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="星辰大海">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JavaScript DOM编程艺术笔记 | 星辰大海">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Sat Apr 21 2018 20:35:50 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 23 2018 22:14:18 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html",
+    "headline": "JavaScript DOM编程艺术笔记",
+    "datePublished": "Sat Apr 21 2018 20:35:50 GMT+0800",
+    "dateModified": "Sat Jun 23 2018 22:14:18 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Mars687",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Welcome to my world!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "星辰大海",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第1章-JavaScript简史"><span class="post-toc-number">2.</span> <span class="post-toc-text">第1章 JavaScript简史</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第2章-JavaScript语法"><span class="post-toc-number">3.</span> <span class="post-toc-text">第2章 JavaScript语法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第3章-DOM"><span class="post-toc-number">4.</span> <span class="post-toc-text">第3章 DOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文档（Document）"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">文档（Document）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象（Object）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">对象（Object）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型（Model）"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">模型（Model）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#节点（Node）"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">节点（Node）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取元素"><span class="post-toc-number">4.4.1.</span> <span class="post-toc-text">获取元素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取和设置属性"><span class="post-toc-number">4.4.2.</span> <span class="post-toc-text">获取和设置属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第4章-案例研究：JavaScript图片库"><span class="post-toc-number">5.</span> <span class="post-toc-text">第4章 案例研究：JavaScript图片库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第5章-最佳实践"><span class="post-toc-number">6.</span> <span class="post-toc-text">第5章 最佳实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-过去的错误"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1 过去的错误</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-平稳退化"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2 平稳退化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-向CSS学习"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">3 向CSS学习</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-分离JavaScript"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">4 分离JavaScript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-向后兼容"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">5 向后兼容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-性能考虑"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">6 性能考虑</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第6章-案例研究：图片库改进版"><span class="post-toc-number">7.</span> <span class="post-toc-text">第6章 案例研究：图片库改进版</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#它支持平稳退化吗？"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">它支持平稳退化吗？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#它的JavaScript与HTML标记是分离的吗？"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">它的JavaScript与HTML标记是分离的吗？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加事件处理函数"><span class="post-toc-number">7.2.1.</span> <span class="post-toc-text">添加事件处理函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#共享onload事件"><span class="post-toc-number">7.2.2.</span> <span class="post-toc-text">共享onload事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不要做太多假设"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">不要做太多假设</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#把JavaScript和CSS结合起来"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">把JavaScript和CSS结合起来</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第7章-动态创建标记"><span class="post-toc-number">8.</span> <span class="post-toc-text">第7章 动态创建标记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM方法"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">DOM方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#createElement方法"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">createElement方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#appendChild方法"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">appendChild方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#createTextNode方法"><span class="post-toc-number">8.1.3.</span> <span class="post-toc-text">createTextNode方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重回图片库"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">重回图片库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在已有元素前插入一个新元素"><span class="post-toc-number">8.2.1.</span> <span class="post-toc-text">在已有元素前插入一个新元素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在已有元素后插入一个新元素"><span class="post-toc-number">8.2.2.</span> <span class="post-toc-text">在已有元素后插入一个新元素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片库改进版"><span class="post-toc-number">8.2.3.</span> <span class="post-toc-text">图片库改进版</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深入理解函数showPic的返回值"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">深入理解函数showPic的返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第8章-充实文档内容"><span class="post-toc-number">9.</span> <span class="post-toc-text">第8章 充实文档内容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#显示“缩略语列表”"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">显示“缩略语列表”</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写displayAbbreviations函数"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">编写displayAbbreviations函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#显示“文献来源链接表”"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">显示“文献来源链接表”</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写displayCitations函数"><span class="post-toc-number">9.2.1.</span> <span class="post-toc-text">编写displayCitations函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">小结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 36 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                JavaScript DOM编程艺术笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mars687</strong>
+        <span>4月 21, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript DOM编程艺术笔记&url=http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html&pic=http://blog.venus10.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript DOM编程艺术笔记&url=http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html&via=Mars687" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>DOM脚本看起来似乎比CSS更复杂，可只要领悟了它的语法，你就会发现自己又掌握了一样强大的Web开发工具。归根结底，代码都是<strong>思想</strong>和<strong>概念</strong>的体现。没人能把一种程序设计语言的所有语法和关键字都记住，拿不准的查参考书就好了。理解DOM脚本编程技术背后的思路和原则是学习的关键之处，平稳规划、渐进增强、以用户为中心的设计对任何前端Web开发工作都非常重要。学习过程中要深入理解代码背后的“如何”和“为什么”。</p>
+<p>这本书对于有一定开发经验的前端来说可能写的有些啰嗦，但它对于入门JavaScript DOM编程的小白来说写的真的很好。整本书无时无刻不在体现作者的细心，作者生怕他的读者缺少相关知识看不懂，许多涉及的知识都会讲得很细，后续DOM操作真是给人手把手教的感觉。但本书对我来说最大的难点是一开始学习的姿势就不对：捧着本书前看后看，每句话都读得懂，但连起来却无法形成知识体系。突然意识到自己最大的问题不是书读的少，而是实践太少了。像《JavaScript高级程序设计》这类的书需要多理解概念，而JavaScript DOM编程需要上机操作才能理解。不需要反复读书，仿照书中的例子编一个小程序就什么都懂了。正如古人所说 “纸上来的终觉浅，绝知此事要躬行。” 李小龙也曾说过：“光是知道是不够的，必须加以运用；光是希望是不够的，非去做不可。”</p>
+<h1 id="第1章-JavaScript简史"><a href="#第1章-JavaScript简史" class="headerlink" title="第1章 JavaScript简史"></a>第1章 JavaScript简史</h1><p>略(专注和简化是效率的源泉，本笔记专注DOM编程部分，其余相关基础知识不在赘述)</p>
+<h1 id="第2章-JavaScript语法"><a href="#第2章-JavaScript语法" class="headerlink" title="第2章 JavaScript语法"></a>第2章 JavaScript语法</h1><p>略</p>
+<h1 id="第3章-DOM"><a href="#第3章-DOM" class="headerlink" title="第3章 DOM"></a>第3章 DOM</h1><h2 id="文档（Document）"><a href="#文档（Document）" class="headerlink" title="文档（Document）"></a>文档（Document）</h2><p>当创建了一个网页并把它加载到Web浏览器中时，编写的网页文档转化成了一个文档对象。</p>
+<h2 id="对象（Object）"><a href="#对象（Object）" class="headerlink" title="对象（Object）"></a>对象（Object）</h2><p>JavaScript语言里的对象可以分为三种类型。</p>
+<ul>
+<li>用户定义对象（user-defined object）:由程序员自行创建的对象。</li>
+<li>内建对象（native object）：内建在JavaScript语言里的对象，如Array、Math、Date等。</li>
+<li>宿主对象（host object）：由浏览器提供的对象。<br>宿主对象中最基础的是window对象，它对应于浏览器窗口本身，这个对象的属性和方法通常统称为BOM（浏览器对象模型）。</li>
+</ul>
+<h2 id="模型（Model）"><a href="#模型（Model）" class="headerlink" title="模型（Model）"></a>模型（Model）</h2><p>DOM把一份文档表示为一棵树，具体来讲是一颗家谱树，把文档成为<strong>节点树</strong>更准确些。</p>
+<h2 id="节点（Node）"><a href="#节点（Node）" class="headerlink" title="节点（Node）"></a>节点（Node）</h2><p>节点node表示网络中的一个连接点，一个网络就是由一些节点构成的集合。<br>DOM里有三种不同类型的节点：元素节点、文本节点、属性节点。</p>
+<h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><p><strong>（1）getElementById</strong>(采用驼峰命名法)<br>   返回一个对象，该对象对应着文档中一个特定的元素节点。<br>   getElementById是document对象特有的函数。在脚本代码里，函数名的后面必须跟一对圆括号包含着函数的参数。getElementById方法只有一个参数：你想获得的那个元素的id属性的值，这个id值必须放在单引号或双引号里。这是由于CSS中id属性作用于某个元素且该元素唯一，所以通过id只能获得一个元素，方法名中<strong>Element</strong>为单数。</p>
+<p><strong>（2）getElementsByTagName</strong><br>   返回一个对象数组，它们分别对应着文档里一组特定的元素节点。即使整个文档里这个标签只有一个元素，getElementsByTagName也返回一个数组，此时数组长度为1。这个方法也是只有一个参数的函数，它的参数是标签的名字。</p>
+<p><strong>（3）getElementsByClassName</strong><br>   返回一个对象数组，它们分别对应着文档里一组特定的元素节点。使用这个方法还可以查找那些带有多个类名的元素。要指定多个类名，只要在字符串参数中用空格分割类名即可。例如：</p>
+<blockquote>
+<pre><code>alert(document.getElementsByClassName(&quot;important sale&quot;).length);
+</code></pre><p>注意：即使在元素的class属性中，类名的顺序是“sale important”而非参数中指定的“important sale”也会匹配该元素。不仅类名的实际顺序不重要，就算还带有更多的类名也没有关系。</p>
+</blockquote>
+<p>注意：getElementsByTagName和getElementsByClassName方法返回一个对象数组，它们分别对应着文档里一组特定的元素节点，所以方法名中<strong>Elements</strong>为复数。</p>
+<h3 id="获取和设置属性"><a href="#获取和设置属性" class="headerlink" title="获取和设置属性"></a>获取和设置属性</h3><p><strong>（1）getAttribute</strong><br>只有一个参数的函数，但它不属于document对象，所以不能通过document对象调用，只能通过元素节点对象调用。</p>
+<p><strong>（2）setAttribute</strong><br>允许我们队属性节点值做出修改，也是只能用于元素节点。</p>
+<blockquote>
+<pre><code>object.setAttribute(attribute,value)
+</code></pre><p>注意：通过setAttribute对文档做出修改后，在通过浏览器的view source选项去查看文档的源代码时看到的仍将是改变前的属性值。也就是说，setAttribute做出的修改不会反映在文档本身的源代码里。这种“表里不一”的现象源自DOM的工作模式：先加载文档的静态内容，再动态刷新，而动态刷新不影响文档的静态内容。这正式DOM的真正威力：对页面内容进行刷新却不需要在浏览器里刷新页面。</p>
+</blockquote>
+<h1 id="第4章-案例研究：JavaScript图片库"><a href="#第4章-案例研究：JavaScript图片库" class="headerlink" title="第4章 案例研究：JavaScript图片库"></a>第4章 案例研究：JavaScript图片库</h1><p>学习重点：</p>
+<ol>
+<li>利用DOM所提供的方法去编写图片库脚本。</li>
+<li>利用时间处理函数把JavaScript代码与网页集成在一起。</li>
+</ol>
+<p>从第4章开始进入DOM编程实践阶段，也是学习DOM的关键阶段。《神雕侠侣》中杨过在全真教习武，心法口诀倒背如流但跟人打架总是处于被打的局面，为什么？因为赵志敬只传授杨过内功心法而不教任何实战招式。那学习内功心法有没有用？当然有用，内功心法为杨过和小龙女修行玉女心经提供了全真教心法的理论基础。理论为实践提供指导，实践通过积累经验深化对理论的理解。没有理论指导的实践是盲目的，缺少实践检验的理论是空洞的。“理论与实践”是老生常谈的话题了，但在学习技能、与物质世界交互的过程中是永远绕不开的。</p>
+<p>读书学习概念、理论的过程是被动接受知识的过程，你很可能像杨过一样即便内功心法倒背如流也无济于打架。要在学完理论后立即加以运用，主动学习消化知识，变被动为主动。主动学习要清楚两点：</p>
+<ol>
+<li><p>目标<br>你要清楚你要达成的目的是什么，你想要表达什么，呈现什么？目标意识一定要强，否则你会陷入无穷无尽的知识和技术细节而无法脱身。</p>
+</li>
+<li><p>方法<br>清楚了目标，那为了达成它你需要做什么，具体怎么做呢？这就是作者在前言提到的技术背后的思路和原则。</p>
+</li>
+</ol>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>利用JavaScript来创建图片库，把整个图片库的浏览链接集中安排在图片库主页里，只要用户点击了这个主页的某个图片的链接，就把相应的图片传给他。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>首先为这些图片创建一个链接清单</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Image Gallery&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Snapshots&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/GE90.jpg&quot; title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/PW6000.jpg&quot; title=&quot;A PW6000 display&quot;&gt;PW6000&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/CFM56.jpg&quot; title=&quot;A CFM56 display&quot;&gt;CFM56&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/Trent1000.jpg&quot; title=&quot;A Trent1000 display&quot;&gt;Trent1000&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>将此链接清单保存到gallery.html文件，并把图片保存在目录images里。此时当点击图片链接时，转向另一窗口显示图片。</p>
+<div align="center"><br><img src="http://i64.tinypic.com/2mq8947.jpg" alt="Dom-4-1"><br></div>
+
+<p><strong>新的目标</strong>：<br>我希望在点击图片链接时，留在当前网页，同时看到那张图片及原有的图片清单。</p>
+<p><strong>方法</strong>：</p>
+<ul>
+<li>通过增加一个“占位符”图片的办法在这个祝额上为图片预留一个浏览区域。</li>
+<li>当点击某个链接时，把“占位符”图片替换为与那个链接相对应的图片。</li>
+<li>当点击某个链接时拦截这个网页默认跳转到另一窗口的行为。</li>
+</ul>
+<p><strong>1. 增加占位符</strong><br>将以下代码插入到图片清单末尾：</p>
+<blockquote>
+<pre><code>&lt;img id=&quot;placeholder&quot; src=&quot;images/placeholder.gif&quot; alt=&quot;my image gallery&quot;/&gt;                           
+</code></pre></blockquote>
+<p>通过对图片设置id属性，可以通过外部样式表对图片显示位置和效果加以控制。</p>
+<p><strong>2. 替换图片</strong><br>为了把“占位符”图片替换为想要查看的图片，需要改变它的src属性。利用setAttribute方法写一个函数，它获取需显示图片的链接参数，将“占位符”图片的src属性替换为获取链接参数。代码如下：</p>
+<pre><code class="javascript">function showPic(whichpic) {
+    var source = whichpic.getAttribute(&#39;href&#39;);
+    var placeholder = document.getElementById(&#39;placeholder&#39;);
+    placeholder.setAttribute(&quot;src&quot;, source);
+}
+</code></pre>
+<p>现在，需要在图片库文档中插入一个链接来引用这个JavaScript脚本文件。将以下代码插入HTML文档的标签前：</p>
+<blockquote>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/showPic.js&quot;&gt;&lt;/script&gt;
+</code></pre></blockquote>
+<p>如果就此打住，那么showPic函数永远也不会被调用。我们需要给图片列表的链接添加行为，也就是事件处理函数(event handler)，才能达成目标。</p>
+<p><strong>3. 拦截跳转</strong></p>
+<p><strong>事件处理函数</strong><br>事件处理函数的作用是在特定时间发生时调用特定的JavaScript代码。<br>添加事件处理函数的语法如下：</p>
+<blockquote>
+<pre><code>event = &quot;JavaScript statements(s)&quot;
+</code></pre><p>注意，JavaScript代码包含在一对引号之间。可以把任意数量的JavaScript语句放在这对引号之间，只要把各条语句用分号隔开即可。</p>
+</blockquote>
+<p><strong>目标</strong><br>现在我想在用户点击某个图片链接时触发一个动作。</p>
+<p><strong>方法</strong><br>使用onclick事件处理函数。</p>
+<p>需要注意的是showPic()函数需要一个参数：一个带有href属性的元素节点参数。当我把onclick事件处理函数嵌入到一个图片链接重视，需要这个链接本身用作showPic函数的参数。那么该如何调用这个图片链接作为参数呢？<br>有个非常简单有效的办法：使用<strong>this</strong>关键字。<br>这个关键字在这儿的含义是：“这个对象”。具体到当前例子，this表示“这个&lt;a&gt;元素节点”。下面这样onclick事件就可以调用showPic方法了：</p>
+<blockquote>
+<pre><code>onclick = &quot;showPic(this);&quot;
+</code></pre></blockquote>
+<p>如果仅仅把事件处理函数放到图片列表的一个链接中会发现：点击这个链接时，不仅showPic函数被调用，链接被点击的默认行为（此处指跳转到链接指向的页面）也会被调用。这意味着用户还是会被带到图片查看窗口。要想阻止这一默认行为被调用，首先需要了解事件处理函数的工作机制。<br>在给某个元素添加事件处理函数后，一旦事件发生，相应的JavaScript代码会得到执行。被调用的JavaScript代码可以返回一个值，这个值被传递给那个事件处理函数。例如，可以给某个链接添加一个onclick事件处理函数，并让这个处理函数所触发的JavaScript代码返回布尔值true或false。这样,当点击这个链接时，如果那段JavaScript代码返回的值是true，onclick事件处理函数就认为“这个链接被点击了”；反之，如果返回的值是false，onclick事件处理函数就认为“这个链接没有被点击”。因此，人为的在onclick事件处理函数所触发的JavaScript代码里增加一条return false语句，就可以防止用户被带到目标链接窗口：</p>
+<blockquote>
+<pre><code>onclick = &quot;showPic(this); return false;&quot; 
+</code></pre></blockquote>
+<p>在图片列表里的每个链接上添加这个事件处理函数。</p>
+<pre><code class="html">&lt;li&gt;
+    &lt;a href=&quot;images/GE90.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+    title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href=&quot;images/PW6000.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+    title=&quot;A PW6000 display&quot;&gt;PW6000&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href=&quot;images/CFM56.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+    title=&quot;A CFM56 display&quot;&gt;CFM56&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href=&quot;images/Trent1000.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+    title=&quot;A Trent1000 display&quot;&gt;Trent1000&lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+<p>现在，把这个页面加载到Web浏览器中，无论点击图片列表里的哪个链接，都能在当前页面里看到相应的图片。</p>
+<div align="center"><br><img src="http://i68.tinypic.com/6jj66p.jpg" alt="Dom-4-2"><br></div>
+
+<p><strong>目标</strong><br>扩展showPic函数，使图片库中每张图片链接的title属性可以和它相应的图片一同显示在网页上。</p>
+<p><strong>方法</strong><br>利用getAttribute方法获得title属性，通过childNodes属性获取带操作元素的子元素。</p>
+<p><strong>（1）childNodes属性</strong><br>在一棵节点树上，childNodes属性可以用来获取任何一个元素的所有子元素，它是一个包含这个元素全部子元素的数组：</p>
+<blockquote>
+<pre><code>element.childNodes
+</code></pre></blockquote>
+<p>可通过如下代码查出body元素一共有多少个子元素：</p>
+<pre><code class="javascript">function countBodyChildren(){
+    var body_element = document.getElementsByTagName(&quot;body&quot;)[0];
+    alert(body_element.childNodes.length);
+}
+window.onload = countBodyChildren;
+</code></pre>
+<p><strong>（2）nodeType属性</strong><br>nodeType共有12种可取值，但其中仅有3种具有实用价值。</p>
+<ul>
+<li>元素节点的nodeType属性值是1。</li>
+<li>属性节点的nodeType属性值是2。</li>
+<li>文本节点的nodeType属性值是3。</li>
+</ul>
+<p><strong>Tips</strong><br>为便于记忆，可记住Element, Attribute, Text的首字母，<strong>EAT</strong>(吃)。</p>
+<p><strong>（3）为标记里增加一段描述</strong><br>首先，为目标文本安排显示位置，设置id值。</p>
+<blockquote>
+<pre><code>&lt;p id=&quot;description&quot;&gt;Choose an picture.&lt;/p&gt;
+</code></pre></blockquote>
+<p><strong>目标</strong><br>在图片链接被点击时，不仅把占位符图片替换为那个href属性指向的图片，还要把这段文本同时替换为那个图片链接的title属性值。</p>
+<p><strong>（4）用JavaScript改变这段描述</strong><br>在showPic()函数中增加一条语句来获取whichpic对象的title属性值，并将此值赋给text变量：</p>
+<blockquote>
+<pre><code>var text = whichpic.getAttribute(&#39;title&#39;);
+</code></pre></blockquote>
+<p>为了能方便地引用id为description的文本段落，创建一个新的变量来存放它：</p>
+<blockquote>
+<pre><code>var description = document.getElementById(&#39;description&#39;);
+</code></pre></blockquote>
+<p>下一个目标是实现文本切换。</p>
+<p><strong>（5）nodeValue属性</strong><br>如果想改变一个文本节点的值，要使用DOM提供的nodeValue属性，它用来得到（和设置）一个节点的值：</p>
+<blockquote>
+<pre><code>node.nodeValue
+</code></pre></blockquote>
+<p>注意：在用nodeValue属性获取description对象的值时，得到的并不是包含在这个段落里的文本。可以用下面这条语句来验证这一点：</p>
+<blockquote>
+<pre><code>alert(description.nodeValue);
+</code></pre></blockquote>
+<p>这个调用将返回一个null值。&lt;p&gt;元素本身的nodeValue属性是一个空值。<br>我们需要的是&lt;p&gt;所包含的文本的值。<br>包含在&lt;p&gt;元素里的文本是另一种节点，它是&lt;p&gt;元素的第一个子节点。因而我们想得到的是&lt;p&gt;元素第一个子节点的nodeValue属性值。</p>
+<blockquote>
+<pre><code>alert(description.childNodes[0].nodeValue);
+</code></pre><p>数组元素childNodes[0]有个更直观易读的同义词：firstChild，与之对应的是lastChild。</p>
+</blockquote>
+<p>这个调用的返回值才是我们想要的”Choose an image.”。该值来自childNodes数组的第一个元素（下标为0）。</p>
+<p>利用nodeValue属性刷新这段描述:</p>
+<pre><code class="javascript">function showPic(whichpic) {
+    var source = whichpic.getAttribute(&#39;href&#39;);
+    var placeholder = document.getElementById(&#39;placeholder&#39;);
+    placeholder.setAttribute(&quot;src&quot;, source);
+    var text = whichpic.getAttribute(&#39;title&#39;);
+    var description = document.getElementById(&#39;description&#39;);
+    description.childNodes[0].nodeValue = text;
+}
+</code></pre>
+<p>为使图片库更加美观，添加如下样式表：</p>
+<pre><code class="css">body {
+  font-family: &quot;Helvetica&quot;,&quot;Arial&quot;,serif;
+  color: #333;
+  background-color: #ccc;
+  margin: 1em 10%;
+}
+h1 {
+  color: #333;
+  background-color: transparent;
+}
+a {
+  color: #c60;
+  background-color: transparent;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+li {
+  float: left;
+  padding: 1em;
+  list-style: none;
+}
+img {
+  display:block;
+  clear: both;
+}
+</code></pre>
+<p>这样就得到我们想要的图片库了。</p>
+<div align="center"><br><img src="http://i65.tinypic.com/2i0upw0.jpg" alt="Dom-4-3"><br></div>
+
+
+<h1 id="第5章-最佳实践"><a href="#第5章-最佳实践" class="headerlink" title="第5章 最佳实践"></a>第5章 最佳实践</h1><h2 id="1-过去的错误"><a href="#1-过去的错误" class="headerlink" title="1 过去的错误"></a>1 过去的错误</h2><p><strong>（1）不要怪罪JavaScript</strong><br>易学易用的技术是一把双刃剑，容易被广泛应用，但往往缺乏高水平的质量控制措施。HTML就是一个很好的例子。万维网之所以会出现爆炸性的增长，HTML语言易学易用是一个重要原因。随着“所见即所得”网页设计工具的出现和流行，有些人可能链一行HTML标记没见过就成了网页设计大军中的一员。这导致绝大多数网页都编写的很糟糕，甚至不做标记合法性检查。与HTML语言相比，JavaScript语言的生存环境的要求要苛刻得多，JavaScript解释器（对Web应用而言就是浏览器）将拒绝执行不符合语法规定的JavaScript代码并报错。尽管如此，如今的Web上仍然充斥着质量低劣的JavaScript代码。许多网页设计者不舍得花时间去学习JavaScript语言，而是直接把一些现成的JavaScript代码直接剪贴到HTML文档里以使网页更加丰富多彩。但这些现成的JavaScript代码里有很多问题考虑不周全。一旦浏览器不支持或禁用了JavaScript解释功能，那些质量低劣的脚本就会导致用户无法浏览相应的网页甚至整个网站。</p>
+<p>事实上，JavaScript与“网页无法访问”无任何必然联系，网页能否访问完全取决于如何使用JavaScript。</p>
+<p><strong>（2）质疑一切</strong><br>不管你想通过JavaScript改变哪个网页的行为，都必须三思而后行。首先要确认：为这个网页增加这个额外的行为有无必要？</p>
+<p>网站对JavaScript的滥用已经持续了相当长的时间。如果要使用JavaScirpt，就要确认：这么做会对用户浏览体验产生什么影响？用户浏览器不支持JavaScript该怎么办？</p>
+<h2 id="2-平稳退化"><a href="#2-平稳退化" class="headerlink" title="2 平稳退化"></a>2 平稳退化</h2><p>如果正确地使用了JavaScript脚本，就可以让访问者在他们浏览器不支持JavaScript的情况下仍能顺利地浏览你的网站，这就是所谓的平稳退化(graceful degradation)，就是说虽然某些功能无法使用，但最基本的操作仍能顺利完成。</p>
+<p>JavaScript使用window对象的open()方法来创建新的浏览器窗口：</p>
+<blockquote>
+<pre><code>window.open(url,name,features)
+</code></pre></blockquote>
+<p>下面这个函数是window.open()方法的典型应用：</p>
+<pre><code class="javascript">function popUp(winURL){
+    window.open(winURL,&quot;popup&quot;,&quot;width=320,height=480&quot;);
+}
+</code></pre>
+<p>这个函数将打开一个320像素宽、480像素高的新窗口”popUp”。因为我在这个函数里已为新窗口命名，所以当把新的URL地址传递给此函数是，这个函数将 把新窗口的现有文档替换为新URL地址处的文档，而不是在去创建一个新窗口。调用popUp函数的一个办法是使用伪协议。</p>
+<p><strong>（1）“JavaScript：”伪协议(pseudo-protocol)</strong><br>“真”协议用来在因特网上的计算机之间传输数据包，如HTTP协议、FTP协议等，伪协议则是一种非标准化的协议，伪协议让我们通过一个链接来调用JavaScript函数。<br>如调用popUp()函数：</p>
+<blockquote>
+<pre><code>&lt;a href=&quot;javascript:popUp(&#39;http://www.example.com/&#39;);&quot;&gt;Example&lt;/a&gt;
+</code></pre></blockquote>
+<p>这条语句在支持“javascript:”伪协议的浏览器中运行正常，较老的浏览器会失败，支持这种伪协议但禁用了JavaScript功能的浏览器什么也不会做。总之在HTML文档中通过“javascript:”伪协议调用JavaScript代码的做法非常不好。</p>
+<p><strong>（2）内嵌的事件处理函数</strong><br>通过onclick事件处理函数来调用popUp函数：</p>
+<blockquote>
+<pre><code>&lt;a href=&quot;#&quot; onclick=&quot;popUp(&#39;http://www.example.com/&#39;); return false;&quot;&gt;Example&lt;/a&gt;
+</code></pre></blockquote>
+<p>因为在上面这条HTML指令里使用了return false语句，这个链接不会被真的被打开。“#”符号是一个仅供文档内部使用的链接记号（但就这条指令而言，“#”是未指向任何目标的内部链接）。把href值设置为“#”只是为了创建一个空链接，实际工作全部由onclick属性负责完成。</p>
+<p>然而，这个技巧这个方法与通过“javascript:”伪协议调用JavaScript代码的做法同样糟糕，因为不能平稳退化。对于禁用了JavaScript功能的浏览器什么也不会做。</p>
+<p><strong>（3）为何反复强调平稳退化？</strong><br>搜索机器人（searchbot）是一种自动化的程序，它们浏览Web的目的是为了把各种网页添加到搜索引擎侧数据库里。目前只有极少数搜索机器人能理解JavaScript代码。如果你的JavaScript网页不能平稳退化，它们在搜索引擎上的排名就可能大受损害。一个解决办法，具体到popUp（）函数，把href属性设置为真实存在的URL地址，让它成为一个有效的链接：</p>
+<pre><code class="html">&lt;a href=&quot;http://www.example.com/&quot; onclick=&quot;popUp(&#39;http://www.example.com&#39;); return false;&quot;&gt;Example&lt;/a&gt;
+</code></pre>
+<p>使用DOM提供的this.href属性将上述代码可简化为：</p>
+<pre><code class="html">&lt;a href=&quot;http://www.example.com/&quot; onclick=&quot;popUp(this.href);return false;&quot;&gt;Example&lt;/a&gt;
+</code></pre>
+<p>不管采用哪种方法，重要的是href属性现在已经有了合法的值。在把href属性设置为真实存在的URL地址后，即使JavaScript已被禁用（或遭遇到了搜索机），这个链接也是可用的。虽然这个链接在功能上打了折扣（因为它没有他开一个新的窗口），但它并没有失效。这是一个典型的“平稳退化”的例子。</p>
+<h2 id="3-向CSS学习"><a href="#3-向CSS学习" class="headerlink" title="3 向CSS学习"></a>3 向CSS学习</h2><p><strong>（1）结构与样式的分离</strong><br>CSS技术的最大优点就是，它能帮你将Web文档的内容结构（标记）和版面设计（样式）分离开来。我们经常会遇到一些几乎每个元素都带有style属性的Web文档，而这时CSS技术最缺乏效率的用法之一。真正能从CSS技术获益的方法，是把样式全部转移到外部文件中去。</p>
+<p>作为CSS技术的突出优点，文档结构和文档样式的分离可以确保网页都能平稳退化。具备CSS支持的浏览器可以把网页呈现得美轮美奂，不支持或禁用了CSS功能的浏览器同样可以把网页的内容按照正确的结构显示出来。</p>
+<p><strong>（2）渐进增强</strong><br>所谓“渐进增强”就是用一些额外的信息层去包裹原始数据，按照渐进增强原则创建出来的网页几乎都符合平稳退化原则。如果说CSS是提供关于“表示”的信息，则JavaScript是提供“行为”的信息。把CSS代码从HTML文档里分离出来可以让CSS工作得更好，这同样适用于JavaScript行为层。</p>
+<h2 id="4-分离JavaScript"><a href="#4-分离JavaScript" class="headerlink" title="4 分离JavaScript"></a>4 分离JavaScript</h2><p>如何实现当这个链接被点击时，它将调用popUp()函数呢？</p>
+<blockquote>
+<pre><code>&lt;a href=&quot;http://www.example.com/&quot; class=&quot;popup&quot;&gt;Example&lt;/a&gt;
+</code></pre></blockquote>
+<p>JavaScript语言不要求事件必须在HTML文档里处理，可以在外部JavaScript文件里把一个事件添加到HTML文档中的某个元素上，可以利用class或id属性来解决。具体步骤：<br>（1）把文档中所有链接全放入一个数组里。<br>（2）遍历数组。<br>（3）如果某个链接的class属性等于popup，就表示这个链接在被点击时应调用popUp()函数。<br>于是，<br>A. 把这个链接的href属性值传递给popUp()函数；<br>B. 取消这个链接的默认行为，不让这个链接把访问者带离当前窗口。<br>下面是实现代码：</p>
+<pre><code class="javascript">var links = document.getElementsByTagName(&quot;a&quot;);
+for (var i = 0; i &lt; links.length; i++){
+    if (links[i].getAttribute(&quot;class&quot;) == &quot;popup&quot;){
+        links[i].onclick = function(){
+            popUp(this.getAttribute(&quot;href&quot;));
+            return false;
+        }
+    }
+}
+</code></pre>
+<p>以上代码将把调用popUp()函数的onclick事件添加到有关链接上。只要把它们存入一个外部JavaScript文件，就等于是把这些操作从HTML文档里分离出来了。这就是“分离JavaScript”的含义。</p>
+<p>然而，当把这段代码存入外部JavaScript文件，它们将无法正常运行。因为第一行：</p>
+<blockquote>
+<pre><code>var links = document.getElementsByTagName(&quot;a&quot;);
+</code></pre></blockquote>
+<p>这条语句将在JavaScript文件被加载时立刻执行。如果JavaScript文件是从HTML文档的&lt;head&gt;部分用&lt;script&gt;标签调用的，它将在HTML文档之前加载到浏览器里。同样，如果&lt;head&gt;标签位于文档底部&lt;/body&gt;之前，就不能保证哪个文件最先结束加载（浏览器可能一次加载多个）。因为脚本加载时文档可能不完整，所以模型也不完整。没有完整的DOM，getElementsByTagName等方法就不能正常工作。</p>
+<blockquote>
+<p>You need to execute the code once you’re sure the document has finished loading. Fortunately, the complete loading of a document is an event with a corresponding event handler. The document loads within the browser window. The document object is a property of the window object. When the onload event is triggered by the window object, the document object then exists.</p>
+</blockquote>
+<blockquote>
+<p>When the page loads, an event is triggered. This event is onload and it is attached to the window object.[^1]</p>
+</blockquote>
+<p>本书中译本在此处说明不够清楚，结合原书（英文第二版）第5章、第6章原文（以上两段）解释如下：<br>现在必须确保这些代码在文档全部加载后马上开始执行。幸运的是，文档完成加载是一个具有相应事件处理函数的事件（指onload事件）。页面加载时触发一个onload事件，该事件隶属于window对象。文档在浏览器窗口内加载。document对象是window对象的属性。当onload事件被window对象触发时，document对象就已存在了。</p>
+<p>所以，可以把JavaScript代码打包在prepareLinks函数里，并把这个函数添加到window对象的onload事件上去。如此一来，DOM就可以正常工作了：</p>
+<pre><code class="javascript">window.onload = prepareLinks;
+function prepareLinks(){
+    var links = document.getElementsByTagName(&quot;a&quot;);
+    for (var i = 0;i &lt; links.length;i++){
+        if (links[i].getAttribute(&quot;class&quot;)==&quot;popup&quot;){
+            links[i].onclick=function(){
+                popUp(this.getAttribute(&quot;href&quot;));
+                return false;
+            }
+        }
+    }
+}
+
+function popUp(winURL){
+    window.open(winURL,&quot;popup&quot;,&quot;width=320,height=480&quot;);
+}
+</code></pre>
+<h2 id="5-向后兼容"><a href="#5-向后兼容" class="headerlink" title="5 向后兼容"></a>5 向后兼容</h2><p><strong>（1）对象检测</strong><br>检测浏览器对JavaScript的支持程度。只要把某个方法打包在一个if语句里，就可以根据这条if语句的条件表达式求值结果是true还是false来决定采取怎样的行动。这种检测称为对象检测(object detection)。</p>
+<pre><code class="javascript">if(method){
+statements
+}
+</code></pre>
+<p><strong>注意：在使用对象检测时，一定要删除方法名后面的圆括号。</strong></p>
+<p>但如此编写出来的函数会增加一对花括号，如果需要在函数里检测多个DOM方法和/或属性是否存在，这个函数最重要的语句就会深埋在一层又一层的花括号里，这样的代码往往很难阅读和理解。把测试条件改为“如果你不理解这个方法，就离开”则更简单。<br>“如果你不理解……”，需要使用“逻辑非”操作符。“……请离开”可以用一条return语句来实现。因为这相当于中途退出函数，所以让它返回布尔值false。用来测试getElementById是否存在的语句如下：</p>
+<pre><code class="javascript">if(!document.getElementById){
+    return false;
+}
+</code></pre>
+<p>如果需要测试多个方法或属性是否存在，可以用“逻辑或”操作符将其合并。</p>
+<blockquote>
+<pre><code>if(!getElementById || !getElementsByTagName) return false;
+</code></pre></blockquote>
+<p><strong>（2）浏览器嗅探技术</strong>(browser sniffing)<br>“浏览器嗅探”指通过提取浏览器供应商提供的信息来解决向后兼容问题。这是一种风险很大的技术。原因如下：</p>
+<ol>
+<li>浏览器有时会撒谎，将自己报告成另外一种浏览器。</li>
+<li>为适用于多种浏览器，嗅探脚本会越来越复杂。</li>
+<li>许多嗅探脚本在进行此类测试时，要求浏览器版本号必须得到精确匹配，因此需要一直修改。<br>这种技术正在被更简单更健壮的对象检测技术所取代。</li>
+</ol>
+<h2 id="6-性能考虑"><a href="#6-性能考虑" class="headerlink" title="6 性能考虑"></a>6 性能考虑</h2><p><strong>（1）尽量少访问DOM和尽量减少标记</strong><br>在多个函数都会取得一组类似元素的情况下，可以考虑重构代码，把搜索结果保存在一个全局变量里，或者把一组元素直接以参数形式传递给函数。<br>要尽量减少文档中的标记数量。过多不必要的元素只会增加DOM树的规模，进而增加遍历DOM树以查找特定元素的时间。</p>
+<p><strong>（2）合并和放置脚本</strong><br>包含脚本的最佳方式就是使用外部文件。减少请求数量通常都是在性能优化时首先要考虑的。脚本在标记中的位置对页面的初次加载时间也有很大影响。传统上放在&lt;head&gl;里，但会导致浏览器无法并行加载其他文件。一般来说根据HTTP规范，浏览器每次从同一域名中最多只能同时下载两个文件。把所有&lt;script&gt;标签都放到文档的末尾，&lt;/body&gt;标记前，可以让页面变得更快。</p>
+<p><strong>（3）压缩脚本</strong><br>所谓压缩脚本是指把脚本文件中不必要的字节，如空格和注释统统删除，从而达到“压缩”文件的目的。有许多工具可以用来精简代码。多数情况下你应该有两个版本，一个是工作副本，可以修改代码并添加注释；另一个是精简副本，用于放在站点上。为了与非精简版本区分开，可在文件名中加上min字样：</p>
+<blockquote>
+<pre><code>&lt;script src=&quot;scripts/scriptName.min.js&quot;&gt;&lt;/script&gt;
+</code></pre></blockquote>
+<h1 id="第6章-案例研究：图片库改进版"><a href="#第6章-案例研究：图片库改进版" class="headerlink" title="第6章 案例研究：图片库改进版"></a>第6章 案例研究：图片库改进版</h1><p>第4章我们编写了一个用来替换“占位符”图片的src属性的脚本，只用一个网页就建立起了图片库。以下为最终完成的函数代码清单：</p>
+<pre><code class="javascript">function showPic(whichpic) {
+    var source = whichpic.getAttribute(&#39;href&#39;);
+    var placeholder = document.getElementById(&#39;placeholder&#39;);
+    placeholder.setAttribute(&quot;src&quot;, source);
+    var text = whichpic.getAttribute(&#39;title&#39;);
+    var description = document.getElementById(&#39;description&#39;);
+    description.childNodes[0].nodeValue = text;
+}
+</code></pre>
+<p>下面是借调此函数的HTML代码：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Image Gallery&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles/layout.css&quot; media=&quot;screen&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Snapshots&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/GE90.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+            title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/PW6000.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+            title=&quot;A PW6000 display&quot;&gt;PW6000&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/CFM56.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+            title=&quot;A CFM56 display&quot;&gt;CFM56&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/Trent1000.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+            title=&quot;A Trent1000 display&quot;&gt;Trent1000&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;img id=&quot;placeholder&quot; src=&quot;images/placeholder.gif&quot; alt=&quot;my image gallery&quot;/&gt;
+    &lt;p id=&quot;description&quot;&gt;Choose an image.&lt;/p&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/showPic.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>如第5章所述，与DOM脚本编程工作相关的问题不外乎平稳退化、向后兼容和分离JavaScript这几大类。这些问题的解决方式和解决程度影响着网页的可用性和可访问性。下面就从这几个方面来分析和优化第4章的代码。</p>
+<h2 id="它支持平稳退化吗？"><a href="#它支持平稳退化吗？" class="headerlink" title="它支持平稳退化吗？"></a>它支持平稳退化吗？</h2><p>仔细检查代码后发现：即使JavaScript功能被禁用，用户也可以浏览图片库里的所有图片。</p>
+<pre><code class="html">&lt;li&gt;
+    &lt;a href=&quot;images/GE90.jpg&quot; onclick=&quot;showPic(this); return false;&quot; 
+    title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+<p>在没有JavaScript作用的情况下，浏览器将沿着href属性给出的链接前进，用户将看到一张新图片而不是“该图片无法显示”之类的出错信息。</p>
+<div align="center"><br><img src="http://i65.tinypic.com/11w9hqf.jpg" alt="Dom-6-1"><br></div>
+
+<h2 id="它的JavaScript与HTML标记是分离的吗？"><a href="#它的JavaScript与HTML标记是分离的吗？" class="headerlink" title="它的JavaScript与HTML标记是分离的吗？"></a>它的JavaScript与HTML标记是分离的吗？</h2><p>现在我们需要关注网页的行为层（JavaScript）是作用在结构层（HTML）上的，还是两种代码混杂在一起？</p>
+<p>具体到图片库这个例子，它们当然混杂在一起了。理想的情况下，应该在外部文件里完成添加onclick事件处理函数的工作，那样才能让标记文档没有“杂质”，像下面这样：</p>
+<pre><code class="html">&lt;li&gt;
+    &lt;a href=&quot;images/GE90.jpg&quot; title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+<p>把JavaScript代码移出HTML文档不是难事，但为了让浏览器知道页面里都有哪些链接有着不一样的行为，必须找到一种“挂钩”把JavaScript代码与HTML文档中的有关标记关联起来。<br>可以像下面这样给图片清单里的每个链接添加一个class属性：</p>
+<pre><code class="html">&lt;li&gt;
+    &lt;a href=&quot;images/GE90.jpg&quot; class=&quot;gallerypic&quot; title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+<p>但这种方法不够理想，这与给它们分别添加事件处理函数同样麻烦。</p>
+<p>图片清单里的各个链接有一个共同点：它们都包含在同一个列表清单元素里。因此，可以考虑给整个清单添加一个ID属性：</p>
+<pre><code class="html">&lt;ul id=&quot;imagegallery&quot;&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/GE90.jpg&quot; title=&quot;A GE90 display&quot;&gt;GE90&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/PW6000.jpg&quot; title=&quot;A PW6000 display&quot;&gt;PW6000&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/CFM56.jpg&quot; title=&quot;A CFM56 display&quot;&gt;CFM56&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/Trent1000.jpg&quot; title=&quot;A Trent1000 display&quot;&gt;Trent1000&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="添加事件处理函数"><a href="#添加事件处理函数" class="headerlink" title="添加事件处理函数"></a>添加事件处理函数</h3><p>编写一个可以把有关操作关联到onclick事件上的函数，它能完成以下目标：</p>
+<ul>
+<li>检查当前浏览器是否理解getElementsByTagName。</li>
+<li>检查当前浏览器是否理解getElementById。</li>
+<li>检查当前网页是否有id为imagegallery的元素。</li>
+<li>遍历imagegallery中的所有链接。</li>
+<li>设置onclick事件，让它在有关链接被点击时完成以下操作：<br>（1）把这个链接作为参数传给showPic()函数；<br>（2）取消链接被点击时的默认行为。</li>
+</ul>
+<p>定义prepareGallery函数以达成上述目标：</p>
+<pre><code class="javascript">function prepareGallery() {
+    if (!document.getElementsByTagName) {return false;}
+    if (!document.getElementById) {return false;}
+    if (!document.getElementById(&quot;imagegallery&quot;)) {return false;}
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for (var i = 0; i &lt; links.length; i++) {
+        links[i].onclick = function(){
+            showPic(this);
+            return false;
+        }
+    }
+}
+</code></pre>
+<h3 id="共享onload事件"><a href="#共享onload事件" class="headerlink" title="共享onload事件"></a>共享onload事件</h3><p>应该让prepareGallery函数在文档全部加载后马上开始执行。网页加载完毕会触发一个onload事件，该事件隶属于window对象。需要把prepareGllery函数绑定到这个事件上：</p>
+<blockquote>
+<pre><code>window.onload = prepareGallery;
+</code></pre></blockquote>
+<p>如果在页面加载完毕时需执行多个函数，可以采用addLoadEvent函数来把这些函数绑定到window.onload事件上：</p>
+<pre><code class="javascript">function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != &#39;function&#39;) {
+        window.onload = func;
+    }
+    else{
+        window.onload = function(){
+            oldload();
+            func();   
+        }
+    }
+}
+</code></pre>
+<p>这将把那些在页面加载完毕时执行的函数创建为一个队列。如果想添加两个函数到队列中，只需一下两行代码：</p>
+<blockquote>
+<pre><code>addLoadEvent(firstFunciton);
+addLoadEvent(secondFunciotn);
+</code></pre></blockquote>
+<p>无论打算在页面加载完毕执行多少个函数，只要加一条语句就行了。针对prepareGallery函数：</p>
+<blockquote>
+<pre><code>addLoadEvent(prepareGallery);
+</code></pre></blockquote>
+<h2 id="不要做太多假设"><a href="#不要做太多假设" class="headerlink" title="不要做太多假设"></a>不要做太多假设</h2><p>之前编写的showPic函数没有进行任何测试和检查，在代码中用到的id属性值等于placeholder和description元素实际上假定了它们一定存在。为使函数更加严格，应检查这些元素是否存在。下面是showPic函数增加检查后的代码：</p>
+<pre><code class="javascript">function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) {return false;}
+    var source = whichpic.getAttribute(&#39;href&#39;);
+    var placeholder = document.getElementById(&#39;placeholder&#39;);
+    placeholder.setAttribute(&quot;src&quot;, source);
+    if (document.getElementById(&quot;description&quot;)) {
+        var text = whichpic.getAttribute(&#39;title&#39;);
+        var description = document.getElementById(&#39;description&#39;);
+        description.childNodes[0].nodeValue = text;
+    }
+    return true;
+}
+</code></pre>
+<p>还有另一个问题，如果把placeholder图片从标记文档中删除并在浏览器中刷新该页面，无论点击imagegallery清单里的哪一个链接都没有任何反应。</p>
+<blockquote>
+<pre><code>&lt;img id=&quot;placeholder&quot; src=&quot;images/placeholder.gif&quot; alt=&quot;my image gallery&quot;/&gt;
+</code></pre></blockquote>
+<div align="center"><br><img src="http://i68.tinypic.com/vmrnza.jpg" alt="Dom-6-2"><br></div>
+
+<p>问题在于prepareGallery函数假设showPic函数可定会正常返回。基于这一假设，prepareGallery函数取消了onclick事件的默认行为：</p>
+<blockquote>
+<pre><code>links[i].onclick = fucntion() {
+  showPic(this);
+  return false;
+}
+</code></pre></blockquote>
+<p>是否要返回一个false值以取消onclick事件的默认行为应该根据showPic函数决定。<br>showPic函数应返回两个可能的值：</p>
+<ul>
+<li>如果图片切换成功，返回true。</li>
+<li>如果图片切换不成功，返回false。</li>
+</ul>
+<p>为修正这一问题，应在返回前验证showPic的返回值，以便决定是否阻止默认行为。</p>
+<blockquote>
+<pre><code>links[i].onclick = fucntion() {
+  return !showPic(this);
+}
+</code></pre></blockquote>
+<p>现在，如果showPic返回true，我们就返回false，浏览器不会打开那个链接。<br>如果showPic返回false，那么我们认为图片没有更新，于是返回true以允许默认行为发生。<br>以下为prepareGallery函数代码：</p>
+<pre><code class="javascript">function prepareGallery() {
+    if (!document.getElementsByTagName) {return false;}
+    if (!document.getElementById) {return false;}
+    if (!document.getElementById(&quot;imagegallery&quot;)) {return false;}
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for (var i = 0; i &lt; links.length; i++) {
+        links[i].onclick = function(){
+            return !showPic(this);
+        }
+    }
+}
+</code></pre>
+<p>更进一步，我们可以通过三元操作符(ternary operator)检查title属性是否存在：</p>
+<blockquote>
+<pre><code>var text = whichpic.getAttribute(&#39;title&#39;) ? whichpic.getAttribute(&#39;title&#39;) : &quot;&quot;;
+</code></pre><p>当title属性不存在时把变量text的值设置为空字符串。</p>
+</blockquote>
+<p>用nodeName属性测试placeholder元素是否存在：</p>
+<blockquote>
+<pre><code>if(placeholder.nodeName != &quot;IMG&quot;) return false;
+</code></pre></blockquote>
+<p>用nodeType检查description元素的第一个元素是文本节点：</p>
+<blockquote>
+<pre><code> if (description.firstChild.nodeType == 3) {
+    description.firstChild.nodeValue = text;
+ }
+</code></pre></blockquote>
+<p>有视力残疾的用户无法看清屏幕上四处移动的鼠标指针，他们更倾向于使用键盘。幸运的是，onclick事件在用Tab键移动到某个链接然后按下回车的动作是也会被触发。<br>下面是最终完成的showPic()函数和prepareGallery()函数代码：</p>
+<pre><code class="javascript">function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) {return false;}
+    var source = whichpic.getAttribute(&quot;href&quot;);
+    var placeholder = document.getElementById(&quot;placeholder&quot;);
+    if (placeholder.nodeName !=&quot;IMG&quot;) {return false;}
+    placeholder.setAttribute(&quot;src&quot;, source);
+    if (document.getElementById(&quot;description&quot;)) {
+        var text = whichpic.getAttribute(&#39;title&#39;) ? whichpic.getAttribute(&#39;title&#39;) : &quot;&quot;;
+        var description = document.getElementById(&#39;description&#39;);
+        if (description.firstChild.nodeType == 3) {
+            description.childNodes[0].nodeValue = text;
+        }
+    }
+    return true;
+}
+
+function prepareGallery() {
+    if (!document.getElementsByTagName) {return false;}
+    if (!document.getElementById) {return false;}
+    if (!document.getElementById(&quot;imagegallery&quot;)) {return false;}
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for (var i = 0; i &lt; links.length; i++) {
+        links[i].onclick = function(){
+            return !showPic(this);
+        }
+    }
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != &#39;function&#39;) {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+
+addLoadEvent(prepareGallery);
+</code></pre>
+<h2 id="把JavaScript和CSS结合起来"><a href="#把JavaScript和CSS结合起来" class="headerlink" title="把JavaScript和CSS结合起来"></a>把JavaScript和CSS结合起来</h2><p>可以把CSS语句存入外部文件layout.css，然后从gallery.html文件的&lt;head&gt;部分引用layout.css：</p>
+<blockquote>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles/layout.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+</code></pre></blockquote>
+<p>把JavaScript代码从HTML文档里分离出去还带来另一个好处。把内嵌型事件处理函数移出标记文档时，在文档中为JavaScript代码留下了一个“挂钩”：</p>
+<blockquote>
+<pre><code>&lt;ul id=&quot;imagegallery&quot;&gt;
+</code></pre></blockquote>
+<p>这个挂钩可以用在CSS样式表里。<br>如果不想把图片清单显示成一个带项目符号的列表，则完全可以利用这个imagegallery写出一条如下所示的CSS语句：</p>
+<blockquote>
+<pre><code>#imagegallery{
+    list-style: none;
+}
+</code></pre></blockquote>
+<p>然后让这份清单里的列表项从按纵向显示变成按横向显示：</p>
+<blockquote>
+<pre><code>#imagegallery{
+    display: inline;
+}
+</code></pre></blockquote>
+<p>修改HTML文档将图片链接都显示为缩略图而不是文本：</p>
+<pre><code class="html">&lt;ul id=&quot;imagegallery&quot;&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/GE90.jpg&quot; title=&quot;A GE90 display&quot;&gt;
+            &lt;img src=&quot;images/thumbnail_GE90.jpg&quot; alt=&quot;GE90&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/PW6000.jpg&quot; title=&quot;A PW6000 display&quot;&gt;
+            &lt;img src=&quot;images/thumbnail_PW6000.jpg&quot; alt=&quot;PW6000&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/CFM56.jpg&quot; title=&quot;A CFM56 display&quot;&gt;
+            &lt;img src=&quot;images/thumbnail_CFM56.jpg&quot; alt=&quot;CFM56&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;images/Trent1000.jpg&quot; title=&quot;A Trent1000 display&quot;&gt;
+            &lt;img src=&quot;images/thumbnail_Trent1000.jpg&quot; alt=&quot;Trent1000&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>layout.css文件完整代码：</p>
+<pre><code class="css">body {
+  font-family: &quot;Helvetica&quot;,&quot;Arial&quot;,serif;
+  color: #333;
+  background-color: #ccc;
+  margin: 1em 10%;
+}
+h1 {
+  color: #333;
+  background-color: transparent;
+}
+a {
+  color: #c60;
+  background-color: transparent;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+li {
+  float: left;
+  padding: 1em;
+  list-style: none;
+}
+#imagegallery{
+  list-style: none;
+}
+
+#imagegallery li a img {
+  border: 0;
+}
+#placeholder{
+  display: block;
+  clear: both;
+}
+</code></pre>
+<p>最终得到的图片库效果：</p>
+<div align="center"><br><img src="http://i65.tinypic.com/la7g6.jpg" alt="Dom-6-3"><br></div>
+
+
+<h1 id="第7章-动态创建标记"><a href="#第7章-动态创建标记" class="headerlink" title="第7章 动态创建标记"></a>第7章 动态创建标记</h1><p>前面图片库的例子中我们使用html来创建网页结构，JavaScript函数只用来改变某些细节而不改变其底层结构。JavaScript也可以用来改变网页的结构和内容。</p>
+<h2 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h2><p>DOM是文档的表示，它包含的信息和文档里的信息一一对应。只要学会正确使用就可以获取DOM节点树上任何一个节点的细节。</p>
+<p>DOM是一条双向车道，它不仅可以获取文档内容，还可以更新文档内容。如前文所述，使用setArribute方法可以改变DOM节点树上的某个属性节点，相关文档在浏览器里的呈现就会发生相应的变化。不过，setAttribute方法并未改变文档的物理内容，如果通过文本编辑器而不是浏览器去打开这个文档，我们将看不到任何变化。只有在浏览器中打开那份文档是才能看到文档呈现效果的变化。这是因为浏览器实际显示的是那颗DOM节点树。</p>
+<p>在DOM看来，一个文档就是一颗节点树。如果你想在节点树上添加内容，就必须插入新的节点。如果想添加一些标记到文档，就必须插入元素节点。</p>
+<h3 id="createElement方法"><a href="#createElement方法" class="headerlink" title="createElement方法"></a>createElement方法</h3><p>语法：</p>
+<blockquote>
+<pre><code>document.createElement(nodeName)
+</code></pre></blockquote>
+<p>下面这条语句将创建一个p元素节点：</p>
+<blockquote>
+<pre><code>document.createElement(&quot;p&quot;);
+</code></pre></blockquote>
+<h3 id="appendChild方法"><a href="#appendChild方法" class="headerlink" title="appendChild方法"></a>appendChild方法</h3><p>语法：</p>
+<blockquote>
+<pre><code>parent.appendChild(child)
+</code></pre></blockquote>
+<p>将p元素节点插入一个文档的节点树，让它成为这个文档中“testdiv”元素节点的一个子节点：</p>
+<blockquote>
+<pre><code>document.getElementById(&quot;testdiv&quot;).appendChild(document.createElement(&quot;p&quot;));
+</code></pre></blockquote>
+<h3 id="createTextNode方法"><a href="#createTextNode方法" class="headerlink" title="createTextNode方法"></a>createTextNode方法</h3><p>语法：</p>
+<blockquote>
+<pre><code>document.createTextNode(text)
+</code></pre></blockquote>
+<p>下面这条语句将创建一个内容为“Hello world”的文本节点：</p>
+<blockquote>
+<pre><code>document.createTextNode(&quot;Hello world&quot;);
+</code></pre></blockquote>
+<p>注意：</p>
+<ul>
+<li>创建元素节点方法名为：createElement。</li>
+<li>创建文本节点方法名为：createTextNode。<br>可以认为文本节点较元素节点更为具体，突出细节，方法名为字面量，表达更清楚。</li>
+</ul>
+<h2 id="重回图片库"><a href="#重回图片库" class="headerlink" title="重回图片库"></a>重回图片库</h2><p>第6章创建的图片库以下图片和文字代码是为了showPic脚本服务的。</p>
+<blockquote>
+<pre><code>  &lt;img id=&quot;placeholder&quot; src=&quot;images/placeholder.gif&quot; alt=&quot;my image gallery&quot;/&gt;
+    &lt;p id=&quot;description&quot;&gt;Choose an image.&lt;/p&gt;
+</code></pre></blockquote>
+<p>既然这些元素只是为了让DOM方法处理它们，那么用DOM方法来创建它们最好不过了。</p>
+<h3 id="在已有元素前插入一个新元素"><a href="#在已有元素前插入一个新元素" class="headerlink" title="在已有元素前插入一个新元素"></a>在已有元素前插入一个新元素</h3><p>DOM提供了名为insertBefore()方法，这个方法将把一个元素插入到现有元素的前面。</p>
+<p>语法：</p>
+<blockquote>
+<pre><code>parentElement.insertBefore(newElement, targetElement)
+</code></pre></blockquote>
+<h3 id="在已有元素后插入一个新元素"><a href="#在已有元素后插入一个新元素" class="headerlink" title="在已有元素后插入一个新元素"></a>在已有元素后插入一个新元素</h3><p>DOM并没有提供insertAfter()方法，那我们就编写一个：</p>
+<pre><code class="javascript">function insertAfter (newElement, targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement){
+        parent.appendChild(newElement);
+    }
+    else{
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
+}
+</code></pre>
+<h3 id="图片库改进版"><a href="#图片库改进版" class="headerlink" title="图片库改进版"></a>图片库改进版</h3><p>现在showPic1.js文件中将包含5个函数，它们分别是：</p>
+<ul>
+<li>addLoadEvent函数</li>
+<li>insertAfter函数</li>
+<li>preparePlaceholder函数<br>preparePlaceholder函数负责创建一个img元素和一个p元素。这个函数将把这些新创建的元素插入到节点树里图片库清单的后面。</li>
+<li>prepareGallery函数<br>prepareGallery函数负责处理事件。这个函数遍历处理图片库清单里的每个链接。当用户点解这些链接中的某一个时，就会调用showPic函数。</li>
+<li>showPic函数<br>showPic函数负责把“占位符”图片替换为目标图片。</li>
+</ul>
+<p>为了启用这些功能，用addLoadEvent函数调用preparePlaceholder和prepareGallery函数。</p>
+<blockquote>
+<pre><code>addLoadEvent(preparePlaceholder);
+addLoadEvent(prepareGallery);
+</code></pre></blockquote>
+<p>下面是最终完成的showPic1.js文件：</p>
+<pre><code class="javascript">function preparePlaceholder(){
+    if (!document.createElement) {return false;}
+    if (!document.createTextNode) {return false;}
+    if (!document.getElementById) {return false;}
+    if (!document.getElementById(&quot;imagegallery&quot;)) {return false;}
+    var placeholder = document.createElement(&quot;img&quot;);
+    placeholder.setAttribute(&quot;id&quot;,&quot;placeholder&quot;);
+    placeholder.setAttribute(&quot;src&quot;,&quot;images/placeholder.gif&quot;);
+    placeholder.setAttribute(&quot;alt&quot;,&quot;my image gallery&quot;);
+    var description = document.createElement(&quot;p&quot;);
+    description.setAttribute(&quot;id&quot;,&quot;description&quot;);
+    var desctext = document.createTextNode(&quot;Choose an image.&quot;);
+    description.appendChild(desctext);
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    insertAfter(placeholder, gallery);
+    insertAfter(description, placeholder);
+}
+
+function prepareGallery() {
+    if (!document.getElementsByTagName) {return false;}
+    if (!document.getElementById) {return false;}
+    if (!document.getElementById(&quot;imagegallery&quot;)) {return false;}
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for (var i = 0; i &lt; links.length; i++) {
+        links[i].onclick = function(){
+            return showPic(this);
+        }
+        links[i].onkeypress = links[i].onclick;
+    }
+}
+
+function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) {return true;}
+    var source = whichpic.getAttribute(&quot;href&quot;);
+    var placeholder = document.getElementById(&quot;placeholder&quot;);
+    if (placeholder.nodeName !=&quot;IMG&quot;) {return true;}
+    placeholder.setAttribute(&quot;src&quot;, source);
+    if (!document.getElementById(&quot;description&quot;)) {return false;}
+    if (whichpic.getAttribute(&quot;title&quot;)) {
+        var text = whichpic.getAttribute(&#39;title&#39;);
+    }
+    else{
+        var text = &quot;&quot;;
+    }
+
+    var description = document.getElementById(&#39;description&#39;);
+    if (description.firstChild.nodeType == 3) {
+        description.childNodes[0].nodeValue = text;
+    }
+    return false;
+}
+
+addLoadEvent(preparePlaceholder);
+addLoadEvent(prepareGallery);
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != &#39;function&#39;) {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      oldonload();
+      func();
+    }
+  }
+}
+
+function insertAfter(newElement, targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement){
+        parent.appendChild(newElement);
+    }
+    else{
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
+}
+</code></pre>
+<p>下面是标记减少后的gallery.html文件：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Image Gallery&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles/layout.css&quot; media=&quot;screen&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Snapshots&lt;/h1&gt;
+    &lt;ul id=&quot;imagegallery&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/GE90.jpg&quot; title=&quot;A GE90 display&quot;&gt;
+                &lt;img src=&quot;images/thumbnail_GE90.jpg&quot; alt=&quot;GE90&quot; /&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/PW6000.jpg&quot; title=&quot;A PW6000 display&quot;&gt;
+                &lt;img src=&quot;images/thumbnail_PW6000.jpg&quot; alt=&quot;PW6000&quot; /&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/CFM56.jpg&quot; title=&quot;A CFM56 display&quot;&gt;
+                &lt;img src=&quot;images/thumbnail_CFM56.jpg&quot; alt=&quot;CFM56&quot; /&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/Trent1000.jpg&quot; title=&quot;A Trent1000 display&quot;&gt;
+                &lt;img src=&quot;images/thumbnail_Trent1000.jpg&quot; alt=&quot;Trent1000&quot; /&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/showPic1.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>这样，图片的结构、样式和行为就已经彻底分离了。</p>
+<h2 id="深入理解函数showPic的返回值"><a href="#深入理解函数showPic的返回值" class="headerlink" title="深入理解函数showPic的返回值"></a>深入理解函数showPic的返回值</h2><p>知乎上有人提问书中p87与p113两处showPic()函数返回值不同，解释如下：</p>
+<pre><code class="javascript">function prepareGallery() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementById(&quot;imagegallery&quot;)) return false;
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for ( var i=0; i &lt; links.length; i++) {
+        links[i].onclick = function() {
+        return showPic(this) ? false : true;
+        }
+    }
+}
+
+function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) return false;
+    var source = whichpic.getAttribute(&quot;href&quot;);
+    var placeholder = document.getElementById(&quot;placeholder&quot;);
+    if (placeholder.nodeName != &quot;IMG&quot;) return false;
+    placeholder.setAttribute(&quot;src&quot;,source);
+    if (document.getElementById(&quot;description&quot;)) {
+        var text = whichpic.getAttribute(&quot;title&quot;) ? whichpic.getAttribute(&quot;title&quot;) : &quot;&quot;;
+        var description = document.getElementById(&quot;description&quot;);
+        if (description.firstChild.nodeType == 3) {
+            description.firstChild.nodeValue = text;
+        }
+    }
+    return true;
+}
+</code></pre>
+<p>以上为中译本p90完整代码（p87为部分代码）。这段代码中的showPic()函数实现了很多功能，抛开showpPic()函数的对象检测功能、替换“占位符”图片、替换“title”不谈，直奔问题，为什么返回true？</p>
+<p>想一下最初我们创建showPic()函数的初衷，是为了点击html页面中的图片列表链接后使得“占位符”图片被替换成图片链接所指向的那张图片。</p>
+<p>我们使用onclick事件调用showPic()函数来实现它。但此时出现了一个问题，事件处理函数在完成目标的同时会调用链接被点击的默认行为—— 跳转到链接指向的页面窗口。为了阻止这一行为，需要让onclick事件处理函数所触发的JavaScript代码返回布尔值false，这样onclick事件处理函数就认为“这个链接没有被点击”，也就不会调用被点击的默认行为了。换句或说，我们需要使用事件处理函数“特定事件发生时调用特定JavaScript代码”的功能（这里是调用showPic()函数），而不调用它“链接被点击时默认跳转到链接指向的页面窗口的行为”。</p>
+<blockquote>
+<pre><code>links[i].onclick = function() {
+      showPic(this);
+      return false;
+}
+</code></pre></blockquote>
+<p>此前我们在prepareGallery()函数中做了这样一个假设：showPic函数肯定会正常返回。基于这一假设，即认为“占位符”图片一定会被替换成图片链接所指向的那张图片，我们通过onclick事件处理函数所触发的JavaScript代码返回布尔值false取消了onclick事件的默认行为。然而，这一假设是靠不住的。一旦标记文档中没有placeholder图片，无论点击imagegallery清单里的哪个链接，都没有任何响应。这不是一个平稳退化方案。一个平稳退化方案是：</p>
+<ol>
+<li>“占位符”图片被替换成功时，用户在当前页面看到被替换图片。</li>
+<li>“占位符”图片被替换失败时，用户看到跳转到链接指向页面窗口的图片。（与正常替换图片是同一张图片，只不过不是在“占位符”图片处显示，而是在新的窗口下显示）<br>应在返回前验证shouPic的返回值，以便确定是否阻止默认行为。为实现平稳退化，处理如下：</li>
+</ol>
+<ul>
+<li>“占位符”图片被替换成功，showPic()函数返回true，阻止默认行为，用户在当前页面的“占位符”图片位置处看到被替换图片。</li>
+<li>“占位符”图片被替换失败，showPic()函数返回false，允许默认行为，用户在跳转到链接指向的页面窗口看到这张图片。<br>所以作者用三元运算符实现这一逻辑。</li>
+</ul>
+<blockquote>
+<pre><code>links[i].onclick = function() {
+      return showPic(this) ? false : true;
+}
+</code></pre></blockquote>
+<p>当然也可以直接用“！”对showPic的返回值取反。</p>
+<blockquote>
+<pre><code>links[i].onclick = function() {
+      return !showPic(this);
+}
+</code></pre></blockquote>
+<p>现在回到showPic()函数代码，作者也说了它不符合结构化程序设计“函数只有一个入口一个出口”的原则，但为了避免多层条件语句嵌套造成代码难以阅读，写成了具有多个出口的函数形式。</p>
+<p>我们来分析一下showPic()函数的出口：</p>
+<p>第一个出口前的条件语句用于测试placeholder元素是否存在；第二个出口前的条件语句用于测试placeholder的元素名是否为“img”(nodeName总返回一个大写字母值)。两个出口返回false布尔值，都表示“占位符”图片被替换失败。此时， 上段代码返回true。允许prepareGallery()函数中的onclick事件的默认行为发生，用户在跳转到链接指向的页面窗口看到这张点击的图片。</p>
+<p>shouPic()函数最后一个出口return true，表示所有检测对象都存在，一切正常，“占位符”图片成功替换。阻止prepareGallery()函数中的onclick事件的默认行为发生，用户在当前页面看到被替换图片。</p>
+<p>下面再看p113的代码：</p>
+<pre><code class="javascript">function prepareGallery() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementById(&quot;imagegallery&quot;)) return false;
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for ( var i=0; i &lt; links.length; i++) {
+        links[i].onclick = function() {
+            return showPic(this);
+        }
+        links[i].onkeypress = links[i].onclick;
+    }
+}
+
+function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) return true;
+    var source = whichpic.getAttribute(&quot;href&quot;);
+    var placeholder = document.getElementById(&quot;placeholder&quot;);
+    placeholder.setAttribute(&quot;src&quot;,source);
+    if (!document.getElementById(&quot;description&quot;)) return false;
+    if (whichpic.getAttribute(&quot;title&quot;)) {
+        var text = whichpic.getAttribute(&quot;title&quot;);
+    } 
+    else {
+        var text = &quot;&quot;;
+    }
+    var description = document.getElementById(&quot;description&quot;);
+    if (description.firstChild.nodeType == 3) {
+        description.firstChild.nodeValue = text;
+    }
+    return false;
+}
+</code></pre>
+<p>我们再来分析一下showPic()函数的出口：</p>
+<p>第一个出口前的条件语句还是用于测试placeholder元素是否存在；第二个出口前的条件语句测试description元素是否存在，这并不影响图片是否替换。所以对于第一个出口，当placeholder元素不存在，即无法替换图片时，返回true。prepareGallery() 函数中的以下代码返回true，允许onclick事件函数的默认行为，用户在跳转窗口看到图片。</p>
+<blockquote>
+<pre><code>links[i].onclick = function() {
+    return showPic(this);
+}
+</code></pre></blockquote>
+<p>而当程序运行到后两个出口时，无论description是否存在，都表示placeholder是一定存在的，图片可以成功替换。此时要阻止onclick事件处理函数的默认行为。所以这两个出口返回false，prepareGallery() 函数中的那段代码也返回false，从而阻止窗口跳转，用户在在当前窗口看到替换图片。</p>
+<p>p90与p113两处逻辑恰好相反，实现同样的功能。将影响最终图片替换操作各处的返回值全部取反，得到的结果是一致的。以下修改后的代码与p113的代码实现同样的功能：</p>
+<pre><code class="javascript">function prepareGallery() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
+    if (!document.getElementById(&quot;imagegallery&quot;)) return false;
+    var gallery = document.getElementById(&quot;imagegallery&quot;);
+    var links = gallery.getElementsByTagName(&quot;a&quot;);
+    for ( var i=0; i &lt; links.length; i++) {
+        links[i].onclick = function() {
+            return !showPic(this); //修改
+        }
+        links[i].onkeypress = links[i].onclick;
+    }
+}
+
+function showPic(whichpic) {
+    if (!document.getElementById(&quot;placeholder&quot;)) return false; //修改
+    var source = whichpic.getAttribute(&quot;href&quot;);
+    var placeholder = document.getElementById(&quot;placeholder&quot;);
+    placeholder.setAttribute(&quot;src&quot;,source);
+    if (!document.getElementById(&quot;description&quot;)) return true; //修改
+    if (whichpic.getAttribute(&quot;title&quot;)) {
+        var text = whichpic.getAttribute(&quot;title&quot;);
+    } 
+    else {
+        var text = &quot;&quot;;
+    }
+    var description = document.getElementById(&quot;description&quot;);
+    if (description.firstChild.nodeType == 3) {
+        description.firstChild.nodeValue = text;
+    }
+    return true; //修改
+}
+</code></pre>
+<h1 id="第8章-充实文档内容"><a href="#第8章-充实文档内容" class="headerlink" title="第8章 充实文档内容"></a>第8章 充实文档内容</h1><h2 id="显示“缩略语列表”"><a href="#显示“缩略语列表”" class="headerlink" title="显示“缩略语列表”"></a>显示“缩略语列表”</h2><p>首先，按照HTML5规范编写一个包含缩略语的标记文件explanation.html:</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;Explaining the Document Object Model&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;What is the Document Object Model?&lt;/h1&gt;
+        &lt;p&gt;
+        The &lt;abbr title=&quot;World Wide Web Consortium&quot;&gt;W3C&lt;/abbr&gt; defines the &lt;abbr title=&quot;Document Object Model&quot;&gt;DOM&lt;/abbr&gt; as:
+        &lt;/p&gt;
+        &lt;blockquote cite=&quot;http://www.w3.org/DOM/&quot;&gt;
+        &lt;p&gt;
+        A platform- and language-neutral interface that will allow programs
+        and scripts to dynamically access and update the
+        content, structure and style of documents.
+        &lt;/p&gt;
+        &lt;/blockquote&gt;
+        &lt;p&gt;
+        It is an &lt;abbr title=&quot;Application Programming Interface&quot;&gt;API&lt;/abbr&gt;
+        that can be used to navigate &lt;abbr title=&quot;HyperText Markup Language&quot;&gt; HTML&lt;/abbr&gt; and &lt;abbr title=&quot;eXtensible Markup Language&quot;&gt;XML
+        &lt;/abbr&gt; documents.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>为explanation.html文档配上样式表,保存为typography.css文件，将其放在子目录styles中：</p>
+<pre><code class="css">body {
+    font-family: &quot;Helvetica&quot;,&quot;Arial&quot;,sans-serif;
+    font-size: 10pt;
+}
+abbr {
+    text-decoration: none;
+    border: 0;
+    font-style: normal;
+}
+</code></pre>
+<p>现在我想用一个定义列表元素来显示这些&lt;abbr&gt;标签包含的文本和title属性。下面是我希望得到的定义列表：</p>
+<pre><code class="html">&lt;dl&gt;
+    &lt;dt&gt;W3C&lt;/dt&gt;
+    &lt;dd&gt;World Wide Web Consortium&lt;/dd&gt;
+    &lt;dt&gt;DOM&lt;/dt&gt;
+    &lt;dd&gt;Document Object Model&lt;/dd&gt;
+    &lt;dt&gt;API&lt;/dt&gt;
+    &lt;dd&gt;Application Programming Interface&lt;/dd&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;XML&lt;/dt&gt;
+    &lt;dd&gt;eXtensible Markup Language&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>可以使用DOM来创建这个列表，具体步骤如下：</p>
+<ol>
+<li>遍历这份文档中的所有abbr元素。</li>
+<li>保存每个abbr元素的title属性。</li>
+<li>保存每个abbr元素包含的文本。</li>
+<li>创建一个“定义列表”元素（即dl元素）。</li>
+<li>创建刚才保存的title属性和abbr元素的文本。</li>
+<li>创建一个“定义标题”元素（即dt元素）。</li>
+<li>把abbr元素的文本插入到这个dt元素。</li>
+<li>创建一个“定义描述”的元素（即dd元素）。</li>
+<li>把title属性插入到这个dd元素。</li>
+<li>把dt元素追加到第4步创建的dl元素上。</li>
+<li>把dd元素追加到第4步创建的dl元素上。</li>
+<li>把dl元素追加到explanation.html文档的body元素上。</li>
+</ol>
+<h3 id="编写displayAbbreviations函数"><a href="#编写displayAbbreviations函数" class="headerlink" title="编写displayAbbreviations函数"></a>编写displayAbbreviations函数</h3><p>创建一个名为displayAbbreviations.js的文件并将其存放到子目录scripts。</p>
+<pre><code class="javascript">//定义displayAbbreviations函数,因为它不需要任何参数，所以函数名后面的圆括号是空的
+function displayAbbreviations() {
+    //找出文档中所有abbr元素的节点集合，将这个由节点构成的数组保存到变量abbreviations里
+    var abbreviations = document.getElementsByTagName(&quot;abbr&quot;);
+    //使用abbreviations数组的length属性检查当前文档是否包含缩略语
+    if (abbreviations.length &lt; 1) return false;
+    //获取并保存每个abbr元素提供的信息
+    var defs = new Array();
+    //遍历所有缩略词
+    for (var i=0; i&lt;abbreviations.length; i++) {
+        var current_abbr = abbreviations[i];
+        var definition = current_abbr.getAttribute(&quot;title&quot;);
+        //要得到&lt;abbr&gt;标签包含的缩略语文本需要nodeValue属性。实际上是需要拿到
+        //abbr元素里的文本节点的值。
+        //在explanation.html文档中的每个abbr元素都只有一个文本节点，
+        //也是最后一个节点
+        var key = current_abbr.lastChild.nodeValue;
+        //现在要把definition和key两个变量保存到defs数组中，通过把其中之一用作
+        //数组元素的下标（键），另一个用作数组元素的值的方式来同时保存这两个值
+        defs[key] = definition;
+    }
+    var dlist = document.createElement(&quot;dl&quot;);
+    //遍历定义，把defs关联数组里的每个键的值赋给变量key
+    for (key in defs) {
+        var definition = defs[key];
+        var dtitle = document.createElement(&quot;dt&quot;);
+        var dtitle_text = document.createTextNode(key);
+        dtitle.appendChild(dtitle_text);
+        var ddesc = document.createElement(&quot;dd&quot;);
+        var ddesc_text = document.createTextNode(definition);
+        ddesc.appendChild(ddesc_text);
+        dlist.appendChild(dtitle);
+        dlist.appendChild(ddesc);
+    }
+    var header = document.createElement(&quot;h2&quot;);
+    var header_text = document.createTextNode(&quot;Abbreviations&quot;);
+    header.appendChild(header_text);
+    //使用HTML-DOM引用给定文档的body属性，插入“缩略语表”标题和表
+    document.body.appendChild(header);
+    document.body.appendChild(dlist);
+}
+</code></pre>
+<p>使用addLoadEvent调用displayAbbreviations函数，使它在页面加载时被调用：</p>
+<blockquote>
+<pre><code>addLoadEvent(displayAbbreviations);
+</code></pre></blockquote>
+<p>为了调用这两个JavaScript脚本文件，在explanation.html文件的&lt;head&gt;部分添加一些&lt;script&gt;标签：</p>
+<blockquote>
+<pre><code>&lt;script src=&quot;script/addLoadEvent.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;script/displayAbbreviations.js&quot;&gt;&lt;/script&gt;
+</code></pre></blockquote>
+<p>最终完成的explanation.html文件：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+    &lt;title&gt;Explaining the Document Object Model&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;styles/typography.css&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/addLoadEvent.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/displayAbbreviations.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;What is the Document Object Model?&lt;/h1&gt;
+    &lt;p&gt;
+The &lt;abbr title=&quot;World Wide Web Consortium&quot;&gt;W3C&lt;/abbr&gt; defines
+ the &lt;abbr title=&quot;Document Object Model&quot;&gt;DOM&lt;/abbr&gt; as:
+    &lt;/p&gt;
+    &lt;blockquote cite=&quot;http://www.w3.org/DOM/&quot;&gt;
+      &lt;p&gt;
+A platform- and language-neutral interface that will allow programs
+ and scripts to dynamically access and update the
+ content, structure and style of documents.
+      &lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;p&gt;
+It is an &lt;abbr title=&quot;Application Programming Interface&quot;&gt;API&lt;/abbr&gt;
+ that can be used to navigate &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;
+HTML&lt;/abbr&gt; and &lt;abbr title=&quot;eXtensible Markup Language&quot;&gt;XML
+&lt;/abbr&gt; documents.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;    
+</code></pre>
+<p>在浏览器中加载explanation.html就能看到displayAbbreviations函数的效果了：</p>
+<div align="center"><br><img src="http://i64.tinypic.com/10engd5.jpg" alt="dom8-1"><br></div>
+
+<h2 id="显示“文献来源链接表”"><a href="#显示“文献来源链接表”" class="headerlink" title="显示“文献来源链接表”"></a>显示“文献来源链接表”</h2><p>explanation.html文档中有这样一段标记：</p>
+<pre><code class="html">&lt;blockquote cite=&quot;http://www.w3.org/DOM/&quot;&gt;
+  &lt;p&gt;
+A platform- and language-neutral interface that will allow programs
+and scripts to dynamically access and update the
+content, structure and style of documents.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+</code></pre>
+<p>blockquote元素包含一个cite属性。这是一个可选属性，你可以给它一个URL地址，说明blockquote元素的内容引自哪里。从理论上讲，只可以把文献资料和相关网页链接起来；但在实践中，浏览器会完全忽视cite属性。利用JavaScript和DOM可以把这些信息收集起来并显示在网页上。</p>
+<p>文献以链接的形式显示的具体步骤：</p>
+<ol>
+<li>遍历这个文档里所有的blockquote元素。</li>
+<li>从blockquote元素提取cite属性的值。</li>
+<li>创建一个标识文本是source的链接。</li>
+<li>把这个链接赋值为blockquote元素的cite属性值。</li>
+<li>把这个链接插入到文献节选的末尾。</li>
+</ol>
+<h3 id="编写displayCitations函数"><a href="#编写displayCitations函数" class="headerlink" title="编写displayCitations函数"></a>编写displayCitations函数</h3><pre><code class="javascript">function displayCitations() {
+  if (!document.getElementsByTagName || !document.createElement || !document.createTextNode) return false;
+// 取得所有引用
+  var quotes = document.getElementsByTagName(&quot;blockquote&quot;);
+// 遍历引用
+  for (var i=0; i&lt;quotes.length; i++) {
+// 如果没有cite属性，继续循环
+    if (!quotes[i].hasAttribute(&quot;cite&quot;)) continue;
+// 保存cite属性
+    var url = quotes[i].getAttribute(&quot;cite&quot;);
+// 取得引用中所有元素节点
+    var quoteChildren = quotes[i].getElementsByTagName(&#39;*&#39;);
+// 如果没有元素节点，继续循环
+    if (quoteChildren.length &lt; 1) continue;
+// 取得引用中最后一个元素节点
+    var elem = quoteChildren[quoteChildren.length - 1];
+// 创建标记
+    var link = document.createElement(&quot;a&quot;);
+    var link_text = document.createTextNode(&quot;source&quot;);
+    link.appendChild(link_text);
+    link.setAttribute(&quot;href&quot;,url);
+    var superscript = document.createElement(&quot;sup&quot;);
+    superscript.appendChild(link);
+//把标记增加到引用中的最后一个元素节点
+    elem.appendChild(superscript);
+  }
+}
+addLoadEvent(displayCitations);
+</code></pre>
+<p>为调用displayCitations.js在explanation.html文档末尾添加一组&lt;script&gt;标签：</p>
+<blockquote>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/displayCitations.js&quot;&gt;&lt;/script&gt;
+</code></pre></blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本章学习了使用JavaScript和DOM去维护和创建标记，但要始终记住：JavaScript脚本只应该用来充实文档的内容，为了是文档能平稳退化，要避免使用DOM技术来创建核心内容。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p> [1]: Jeremy Keith, et al. DOM Scripting: Web Design with JavaScript and the Document Object Model: Second Edition. Apress, (2010) 66-80</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://blog.venus10.com/2018/04/21/JavaScript-DOM编程艺术笔记/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//mars687.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/23/Relax-you-are-not-late/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/17/CSS-盒子模型/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mars687's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tbdyfe@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">11</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/DOM/">DOM<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/DataStructure/">DataStructure<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/HTML/">HTML<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/IFE/">IFE<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/Network/">Network<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/OperatingSystem/">OperatingSystem<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ajax/">ajax<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端/">移动端<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">50</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>星辰大海
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//mars687.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
